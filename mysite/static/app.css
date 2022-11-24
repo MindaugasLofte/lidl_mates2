@@ -1,0 +1,20 @@
+body{
+/*background-color:red*/
+background-color:#fafafa
+}
+body{
+font-family:Arial,"MS Trebuchet",sans-serif
+}
+
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+
+}
+
+.logo{
+  width: 15vh;
+  height: auto;
+}
+

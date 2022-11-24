@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+{% trans "Search" %}
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="">
+{% endblock %}
+
+{% block content %}
+
+ {% for krautuvas in object_list %}
+    <li>
+      {{ krautuvo.id }}
+    </li>
+  {% endfor %}
+
+
+
+
+
+
+{% endblock %}

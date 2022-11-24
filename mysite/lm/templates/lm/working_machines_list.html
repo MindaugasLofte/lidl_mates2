@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+{% trans "Working maschine list" %}
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="">
+{% endblock %}
+
+{% block content %}
+<h1>{% trans "Working maschine list" %} </h1>
+
+<form class="d-flex" role="search" action="{% url 'search' %}" method="get">
+    <input class="form-control me-2" name="query" type="search" placeholder=" Įveskite krautuvo triženklį numerį ar dalį jo, neįvedus skaičiaus: bus grąžintas visų krautuvų naudojimosi sąrašas." aria-label="Search">
+    <button class="btn btn-outline-secondary" type="submit">{% trans "Search" %}</button>
+</form>
+
+
+
+
+{% endblock %}

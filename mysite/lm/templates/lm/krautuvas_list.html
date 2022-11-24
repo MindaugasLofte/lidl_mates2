@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+{% trans "Search" %}
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="">
+{% endblock %}
+
+{% block content %}
+
+<h1>{% trans "Paieškos rezultatai, krautuvu (-ais) naudojosi: " %} </h1>
+ {% for krautuvas in object_list %}
+    <li>
+    Krautuvą, kurio numeris {{ krautuvas.krautuvo_id }} naudojo  {{ krautuvas.darbuotojas }}  {{ krautuvas.data_taken }}
+    </li>
+  {% endfor %}
+
+
+
+
+
+
+{% endblock %}
