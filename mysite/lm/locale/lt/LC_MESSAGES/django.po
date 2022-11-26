@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-26 03:50+0200\n"
+"PO-Revision-Date: 2022-11-26 03:53+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
+"X-Generator: Poedit 3.2\n"
+
+#: .\lm\models.py:19
+msgid "Working zone code"
+msgstr "Darbo zonos kodas"
+
+#: .\lm\models.py:21
+msgid "Description"
+msgstr "Aprašymas"
+
+#: .\lm\models.py:24
+msgid "Working zone"
+msgstr "Darbo zona"
+
+#: .\lm\models.py:25 .\lm\templates\lm\working_zones.html:6
+#: .\lm\templates\lm\working_zones.html:14
+msgid "Working zones"
+msgstr "Darbo zonos"
+
+#: .\lm\models.py:31
+msgid "Piker code"
+msgstr "Surinkėjo kodas"
+
+#: .\lm\models.py:32
+msgid "First name"
+msgstr "Vardas"
+
+#: .\lm\models.py:33
+msgid "Last name"
+msgstr "Pavardė"
+
+#: .\lm\models.py:42
+#, fuzzy
+msgid "Working disctric or logistic warehouse"
+msgstr "Darbo apskirtis arba logistikos sandėlis"
+
+#: .\lm\models.py:49
+msgid "Working position"
+msgstr "Pareigos"
+
+#: .\lm\models.py:51
+msgid "Working since"
+msgstr "Dirba nuo"
+
+#: .\lm\models.py:55 .\lm\templates\lm\worker.html:6
+msgid "Worker"
+msgstr "Darbuotojas"
+
+#: .\lm\models.py:56 .\lm\templates\lm\workers.html:6
+msgid "Workers"
+msgstr "Darbuotojai"
+
+#: .\lm\models.py:68
+msgid "Date of working record"
+msgstr "Darbo įrašo data"
+
+#: .\lm\models.py:75
+msgid "Type of working record"
+msgstr "Darbo įrašo tipas"
+
+#: .\lm\models.py:76
+msgid "Duration"
+msgstr "Trukmė"
+
+#: .\lm\models.py:77
+msgid "Picked boxes per duration"
+msgstr "Surinkta dėžių per periodą"
+
+#: .\lm\models.py:80
+#, fuzzy
+#| msgid "Working zone code"
+msgid "Working record"
+msgstr "Darbo zonos kodas"
+
+#: .\lm\models.py:81
+msgid "Working records"
+msgstr "Darbo zonos kodai"
+
+#: .\lm\models.py:92
+msgid "Date"
+msgstr "Data"
+
+#: .\lm\models.py:98
+msgid "Type of notes"
+msgstr "Įrašo tipas"
+
+#: .\lm\models.py:99
+msgid "Description of the notes"
+msgstr "Aprašymas pastabos"
+
+#: .\lm\models.py:103
+msgid "Note"
+msgstr "Vartotojo įrašas"
+
+#: .\lm\models.py:104
+msgid "Notes"
+msgstr "Vartotojo įrašai"
+
+#: .\lm\models.py:110
+msgid "Vechiles ID \"3 digits\""
+msgstr "Darbo mašinos \"3 skaitmenys\""
+
+#: .\lm\models.py:111
+msgid "Date when vechiles was taken"
+msgstr "Diena kada buvo paima mašina"
+
+#: .\lm\models.py:118
+msgid "Importance of the notes"
+msgstr "Pastabos svarbumas"
+
+#: .\lm\models.py:124
+msgid "Vehicle"
+msgstr "Darbo mašina"
+
+#: .\lm\models.py:125
+msgid "Vehicles"
+msgstr "Darbo mašinos"
+
+#: .\lm\templates\lm\about.html:6 .\lm\templates\lm\about.html:14
+msgid "About"
+msgstr "Apie"
+
+#: .\lm\templates\lm\dashboard.html:6 .\lm\templates\lm\dashboard.html:14
+msgid "Dashboard"
+msgstr "Vartotojo pagrininis langas"
+
+#: .\lm\templates\lm\dashboard.html:16
+msgid "Only your data here"
+msgstr "Tik jūsų duomenys čia rodomi"
+
+#: .\lm\templates\lm\index.html:6
+msgid "Index"
+msgstr "Pagrindinis"
+
+#: .\lm\templates\lm\index.html:14
+#, fuzzy
+#| msgid "Index - pradinis puslapis"
+msgid "Index - main page"
+msgstr "Index - pradinis puslapis"
+
+#: .\lm\templates\lm\krautuvas_list.html:6 .\lm\templates\lm\search.html:6
+#: .\lm\templates\lm\working_machines_list.html:18
+msgid "Search"
+msgstr "Paieška"
+
+#: .\lm\templates\lm\krautuvas_list.html:15
+msgid "Search results: "
+msgstr "Paieškos rezultatai: "
+
+#: .\lm\templates\lm\krautuvas_list.html:18
+msgid "Vechle, which number is "
+msgstr "Mašinos, kurios numeris yra "
+
+#: .\lm\templates\lm\krautuvas_list.html:18
+msgid "used by "
+msgstr "naudojo "
+
+#: .\lm\templates\lm\welcome.html:6
+msgid "Welcome"
+msgstr "Sveiki"
+
+#: .\lm\templates\lm\worker.html:14
+msgid "Information about one worker"
+msgstr "Informacija apie vieną darbuotoją"
+
+#: .\lm\templates\lm\workers.html:14
+#, fuzzy
+#| msgid "All workers loggined in app"
+msgid "All workers logged in app"
+msgstr "Visi darbuotojai, kurie jau prisijungė prie programos"
+
+#: .\lm\templates\lm\working_machines_list.html:6
+#: .\lm\templates\lm\working_machines_list.html:14
+msgid "Working machine list"
+msgstr "Darbo mašinų sąrašas"
+
+#: .\lm\views.py:45
+#, python-format
+msgid "Username %s already exists!"
+msgstr "Vartotojas  %s jau toks yra!"
+
+#: .\lm\views.py:49
+#, python-format
+msgid "Username with %s already exists!"
+msgstr "Vartotojas su %s jau yra registruotas!"
+
+#: .\lm\views.py:55
+msgid "Passwords do no match!"
+msgstr "Slaptažodžiai nesutampa!"
+
+#~ msgid "note_type"
+#~ msgstr "Įrašo tipas"
+
+#~ msgid "Paieškos rezultatai, krautuvu (-ais) naudojosi: "
+#~ msgstr "Paieškos rezultatai, krautuvu (-ais) naudojosi: "
+
+#~ msgid "konkretus darbuotojas"
+#~ msgstr "konkretus darbuotojas"
+
+#~ msgid "All workers"
+#~ msgstr "Visi darbuotojai"

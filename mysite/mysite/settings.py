@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -114,11 +115,13 @@ LANGUAGE_CODE = 'lt'
 
 TIME_ZONE = 'Europe/Vilnius'
 
-# 1115paskaitos  Vertimai 1v, pakeiciam is eng i lt
+# ateityje pridėti ukrainiečių ir vokiečių kalbąs
 LANGUAGES = (
     ('en-us', _('English')),
     ('lt', _('Lithuanian')),
 )
+
+
 
 USE_I18N = True
 
@@ -152,3 +155,9 @@ EMAIL_POST = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'mano_pastas@gmail.com' #is kurio siusime emailo resetinimo zinutes
 EMAIL_HOST_PASSWORD = 'secret'
+
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+    os.path.join(BASE_DIR, 'mysite', 'locale')
+)
