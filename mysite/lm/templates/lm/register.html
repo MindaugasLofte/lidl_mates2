@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% load i18n %}
 <div class="container register">
-    <h3>Registracija</h3>
+    <h3>{% trans 'Registration' %}</h3>
     {% if messages %}
     {% for message in messages %}
     <div class="alert alert-danger" role="alert">
@@ -14,27 +14,27 @@
     <form action="" method="post">
         {% csrf_token %}
         <div class="form-group">
-            <label for="username">Vartotojo vardas</label>
+            <label for="username">{% trans 'Username:' %}</label>
             <input name="username" type="text" class="form-control" id="username">
-            <small class="form-text text-muted">Iki 100 simbolių.</small>
+            <small class="form-text text-muted">{% trans 'Up to 100 simbols' %}</small>
         </div>
         <div class="form-group">
-            <label for="email">El. paštas </label>
+            <label for="email">{% trans 'E-mail' %} </label>
             <input name="email" type="email" class="form-control" id="email">
-            <small class="form-text text-muted">Nesiųsime jokio spamo, reikalingas tik slaptažodžiui išsiųsti.</small>
+            <small class="form-text text-muted">{% trans 'We will not send any spam, only for password reset issues.' %}</small>
         </div>
         <div class="form-group">
-            <label for="password"> Slaptažodis</label>
+            <label for="password"> {% trans 'Password' %}</label>
             <input name="password" type="password" class="form-control" id="password">
-            <small class="form-text text-muted">Netrumpesnis nei 8 simboliai, negali būti vien skaičiai.</small>
+            <small class="form-text text-muted">{% trans 'We recommend oo shorter than 8 characters, and not only numbers.' %}</small>
         </div>
         <div class="form-group">
-            <label for="password2">Pakartokite slaptažodį</label>
+            <label for="password2">{% trans 'Retype password' %}</label>
             <input name="password2" type="password" class="form-control" id="password2">
         </div>
-        <button type="submit" class="btn btn-secondary btn-register">Registruotis</button>
+        <button type="submit" class="btn btn-secondary btn-register">{% trans 'Finish registration' %}</button>
     </form>
-    <p>Jei esate užsiregistravęs anskčiau <a href="{% url 'login' %}">Prisijunkite</a></p>
+    <p>{% trans 'Have account already?' %} <a href="{% url 'login' %}">{% trans 'Login' %}</a></p>
 </div>
 
 {% endblock %}

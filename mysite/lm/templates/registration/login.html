@@ -1,17 +1,17 @@
-<!--4v) kad uzregistruotume -->
 
 {% extends 'base.html' %}
 
 {% block content %}
-<!--jeigu buis klaida iskart pranesk apie tai-->
+{% load i18n %}
+<!--jeigu bus klaida iskart pranesk apie tai-->
 {% if form.errors %}
-<p>Prisijungimo klaida, bandykite dar kartą.</p>
+<p>{% trans "Login error, try again." %}</p>
 {% endif %}
 <!--ar turi vartotojas prisijungima-->
 {% if next %}
 {% if user.is_authenticated %}
-<p>Neturite teisės matyti šio turinio.</p>
-{% endif%}
+<p>{% trans "Access is denied." %}</p>
+{% endif %}
 {% endif %}
 
 <form method="post" action="{% url 'login' %}">
@@ -19,17 +19,17 @@
     {% csrf_token %}
     <table>
         <tr>
-            <td>Vartotojas:</td>
+            <td>{% trans "Username:" %}</td>
             <td>{{form.username}}</td>
         </tr>
         <tr>
-            <td>Slaptažodis:</td>
+            <td>{% trans "Password:" %}</td>
             <td>{{form.password}}</td>
         </tr>
     </table>
-    <input type="submit" value="Prisijungti">
+    <input type="submit" value="{% trans 'Login' %}">
     <input type="hidden" name="next" value="{{next}}">
 </form>
 
-<p><a href="{% url 'password_reset' %}">Pamiršote slaptažodį?</a></p>
+<p><a href="{% url 'password_reset' %}">{% trans 'Forgot password?' %}</a></p>
 {% endblock %}
