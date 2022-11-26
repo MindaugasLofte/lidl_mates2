@@ -16,5 +16,40 @@
 <a>{% trans "Only your data here" %} </a>
 
 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['date', 'user_rate', 'average_rate'],
+          ['2022-11-01',  250,      220],
+          ['2022-11-02',  240,      230],
+          ['2022-11-03',  230,      220],
+          ['2022-11-04',  220,      230],
+          ['2022-11-05',  250,      220],
+          ['2022-11-06',  210,      220],
+          ['2022-11-07',  230,      230],
+          ['2022-11-08',  210,      240],
+          ['2022-11-09',  230,      220],
+          ['2022-11-10',  230,      220],
+          ['2022-11-11',  250,      230],
+        ]);
+
+        var options = {
+          title: 'DEMO Planuojama sukurti vizualizacija. Prisijungusio vartotojo surinktu vid. deziu per val greicio lyginant su vidurkiu',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+    <div id="curve_chart" style="width: 100%; height: 500px"></div>
+
 
 {% endblock %}
