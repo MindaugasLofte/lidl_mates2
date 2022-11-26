@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-26 12:33+0200\n"
-"PO-Revision-Date: 2022-11-26 12:42+0200\n"
+"POT-Creation-Date: 2022-11-26 18:31+0200\n"
+"PO-Revision-Date: 2022-11-26 18:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: lt\n"
@@ -50,7 +50,6 @@ msgid "Last name"
 msgstr "Pavardė"
 
 #: .\models.py:42
-#, fuzzy
 msgid "Working disctric or logistic warehouse"
 msgstr "Darbo apskirtis arba logistikos sandėlis"
 
@@ -87,14 +86,12 @@ msgid "Picked boxes per duration"
 msgstr "Surinkta dėžių per periodą"
 
 #: .\models.py:80
-#, fuzzy
-#| msgid "Working zone code"
 msgid "Working record"
-msgstr "Darbo zonos kodas"
+msgstr "Darbo laiko įrašas"
 
 #: .\models.py:81
 msgid "Working records"
-msgstr "Darbo zonos kodai"
+msgstr "Darbo laiko įrašai"
 
 #: .\models.py:92
 msgid "Date"
@@ -106,7 +103,7 @@ msgstr "Įrašo tipas"
 
 #: .\models.py:99
 msgid "Description of the notes"
-msgstr "Aprašymas pastabos"
+msgstr "Pastabos aprašymas"
 
 #: .\models.py:103
 msgid "Note"
@@ -177,7 +174,7 @@ msgstr "naudojo "
 
 #: .\templates\lm\register.html:6
 msgid "Registration"
-msgstr "Užbaigti registracją"
+msgstr "Užbaigti registraciją"
 
 #: .\templates\lm\register.html:17 .\templates\registration\login.html:22
 msgid "Username:"

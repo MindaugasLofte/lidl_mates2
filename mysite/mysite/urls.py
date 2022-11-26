@@ -26,6 +26,7 @@ urlpatterns = [
     # kad nereiktu rasyti lm ir mestu i pagrindini puslapi
     path('', RedirectView.as_view(url='lm/', permanent=True)),
     path('i18n/', include('django.conf.urls.i18n')),
+    path("favicon.ico", RedirectView.as_view(url=static("favicon.ico"))),
 ] \
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
