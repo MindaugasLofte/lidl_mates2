@@ -2,7 +2,7 @@
 Repozitoriumas VIGI25 individualiems projektams
 
 # Introduction
-- Iki šiol dirbu LIDL įmonėje ir kartu su kolegomis pasigendame tam tikrų mažų palengvinimų, kurias ir net jas pasistengsiu 
+- Iki šiol dirbu LIDL įmonėje ir kartu su kolegomis pasigendame tam tikrų mažų palengvinimų, kurias ir ne tik jas pasistengsiu 
 įgyvendinti keliais programos įgyvendinimo etapais. Planuojama programa bus aktuali ne tik darbuotojams, bet ir vadovams.
 
 - Įkelta programa yra tik maža dalis to ką planuojama. Yra sukurta pilna vizija, kaip turėtų funkcionuoti programa.
@@ -33,10 +33,10 @@ Demo vartotojas lyginant su neprisijungusiu vartotoju galės pamatyti kaip atrod
 * terminale rašome          "cd mysite"
 * terminale rašome po to    "python manage.py runserver"     (dar galima  dėti tarpą ir prirašyti 5000 arba 8000 arba 8080)
 * paspaudę ant nuorodos būsite nukreipti į tinklapį
-* paspaudus prisijungti ir suvedę demo user/psw - papulsite į Demo aplinką 
+* paspaudus prisijungti ir suvedę demo user/psw - papulsite į tinklapį, o pasirinkę vartotojo aplinka  (EN - Dashboard) papulsite į Demo aplinką 
 ![img_1.png](img_1.png)
-* internto naršyklėje parašę /admin [pvz pilnai atrodo 127.0.0.1:8080/admin/] pateksite į admin login, suvedę 
-aukčiau nurodytus admin user/psw galėsite ne tik naršyti, filtruoti, bet ir įvesti duomenis.
+* interneto naršyklėje parašę /admin [pvz pilnai atrodo 127.0.0.1:8080/admin/] pateksite į admin login, suvedę aukščiau nurodytus (user/psw)  
+* galėsite ne tik naršyti, filtruoti, bet ir įvesti duomenis.
 * ![img_2.png](img_2.png)
 
 
@@ -47,7 +47,7 @@ aukčiau nurodytus admin user/psw galėsite ne tik naršyti, filtruoti, bet ir �
     <br> 2022-11-27 Kaunas</h4>
  </div>
 <ul> Programos versija 0.17</ul>
-<small> p.s. ir žinoma didelis dėkui Žmonai Gabrielei, naujagymei Mortai ir dėstytojai Džordanai</small>
+<small> p.s. ir žinoma didelis dėkui Žmonai Gabrielei, ką tik gimusiai pirmagymei Mortai ir dėstytojai Džordanai</small>
 
 
 
