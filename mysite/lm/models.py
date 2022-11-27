@@ -27,7 +27,7 @@ class Darbo_zona_sandelyje (models.Model):
         verbose_name = _("Working zone")
         verbose_name_plural = _("Working zones")
     def __str__(self):
-        return f'{self.zone_code} - {self.zone_description}'
+        return f'{self.zone_code}'
 
 class Darbuotojas (models.Model):
     """modelis reprezentuojantis darbuotoja."""
