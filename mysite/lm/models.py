@@ -118,6 +118,14 @@ class Krautuvas(models.Model):
     note_type = models.CharField(_('Importance of the notes'),help_text='Rasto gedimo/pastabos svarba', max_length=40, choices=notes_choices, default='be pastebejimu',
                                  blank=True)
     notes = models.TextField(max_length=1000, help_text='labai svarbu pamineti ir smulkiausius gedimus, dekojame.')
+    LOAN_STATUS = (
+        (_('ready'), _('ready')),
+        ('taken', 'taken'),
+        ('waiting_for_repair', 'waiting_for_repair'),
+        ('repairing', 'repairing')
+    )
+    status = models.CharField(_('Status'), max_length=30, choices=LOAN_STATUS, default='taken', help_text='Status', blank=True)
+
 
     class Meta:
         ordering = ['data_taken','note_type']
