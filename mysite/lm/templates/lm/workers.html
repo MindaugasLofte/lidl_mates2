@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-<h1>{% trans "All workers logged in app" %} </h1>
+<h1>{% trans "All workers created by ADMIN" %} </h1>
 
 <table class="table">
   <thead>
@@ -33,7 +33,7 @@
   <tbody>
     <tr>
       <th scope="row">-</th>
-      <td>        <img width=40vh class="rounded-circle account-img" src="{{worker.photo.url}}">
+      <td>        <img width=40vh class="rounded-circle account-img" src="{%if worker.photo%} {{worker.photo.url}} {%else%} {% endif %}">
 </td>
       <td>{{worker.picker_code}}</td>
       <td>{{worker.first_name}}</td>

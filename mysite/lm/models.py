@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
+from django.contrib.auth.models import User
+from datetime import date
 
 # Create your models here.
 # ateiciai
@@ -18,7 +20,7 @@ class Darbo_zona_sandelyje (models.Model):
         ('90', '90 - NonFood')
         )
     zone_code = models.CharField(_('Working zone code'), max_length=80, choices=zone_choices, default='40', help_text='Darbo zona sandėlyje',
-    blank=True)
+    blank=True, unique=True)
     zone_description=models.CharField(_('Description'),max_length=80, help_text='Zonos aprasymas pvz 60-Tiko')
     class Meta:
         ordering = ['zone_code']
@@ -29,7 +31,7 @@ class Darbo_zona_sandelyje (models.Model):
 
 class Darbuotojas (models.Model):
     """modelis reprezentuojantis darbuotoja."""
-    picker_code = models.CharField(_('Piker code'),help_text='rinkejo_kodas', max_length=3)
+    picker_code = models.CharField(_('Piker code'),help_text='rinkejo_kodas', max_length=3, unique=True)
     first_name = models.CharField(_('First name'),help_text='Vardas', max_length=80)
     last_name = models.CharField(_('Last name'),help_text='Pavardė', max_length=80)
     working_zone = models.ForeignKey('Darbo_zona_sandelyje',null=True, on_delete=models.SET_NULL)
@@ -48,7 +50,7 @@ class Darbuotojas (models.Model):
         ('grupes vadovo asistentas', 'grupes vadovo asistentas'),
         ('prekiu komplektuotojas', 'prekiu komplektuotojas'))
     position = models.CharField(_('Working position'),max_length=80, choices=position_choices, default='prekiu komplektuotojas', help_text='Darbuotojo pareigos',blank=True)
-    photo = models.ImageField(help_text='Darbuotojo foto arba avataras', upload_to='photos', null=True)
+    photo = models.ImageField(help_text='Darbuotojo foto arba avataras', upload_to='photos', null=True, blank=True)
     working_since = models.DateField(_('Working since'),help_text='Darbo pradžia LIDL imoneje', null=True, blank=True)
 
     class Meta:
@@ -75,7 +77,7 @@ class Darbo_laiko_irasai(models.Model):
         ('pietu pertrauka','pietu pertrauka'))
     status = models.CharField(_('Type of working record'),help_text='Darbo grafiko laiko tipas', max_length=40, choices= work_status, default='darbas', blank=True)
     duration = models.DurationField(_('Duration'),help_text='darbo iraso trukme', null=True, blank=True)
-    picked_boxes = models.IntegerField(_('Picked boxes per duration'),help_text='Surinkta deziu per irasa')
+    picked_boxes = models.IntegerField(_('Picked boxes per duration'),help_text='Surinkta deziu per irasa',null=True, blank=True)
     class Meta:
         ordering = ['data']
         verbose_name = _("Working record")
@@ -96,8 +98,8 @@ class Notes(models.Model):
         ('9', 'paprasta zinute sau'),
         ('0', 'reikia informuoti tiesiogini vadova'), #0 statusas bus isrikiuota auksciausiai
         ('8', 'metu ideja'))
-    note_type = models.CharField(_('Type of notes'),help_text='Zinutes tipas', max_length=40, choices=notes_choices, default='9', blank=True)
-    summary = models.TextField(_('Description of the notes'),max_length=1000, help_text='Svarbu aprasyti placiau, aciu uz jusu laika.')
+    note_type = models.CharField(_('Type of notes'),help_text='Zinutes tipas', max_length=40, choices=notes_choices, default='9', null=True, blank=True)
+    summary = models.TextField(_('Description of the notes'),max_length=1000, help_text='Svarbu aprasyti placiau, aciu uz jusu laika.',null=True, blank=True)
 
     class Meta:
         ordering = ['data', 'note_type']
@@ -108,24 +110,24 @@ class Notes(models.Model):
 
 
 class Krautuvas(models.Model):
-    krautuvo_id = models.IntegerField(_('Vechiles ID "3 digits"'),help_text='krautuvo numeris')
+    krautuvo_id = models.IntegerField(_('Vechiles ID "3 digits"'),help_text='krautuvo numeris', unique=True)
     data_taken = models.DateField(_('Date when vechiles was taken'),help_text='kada krautuvas paiimtas', null=True, blank=True)
-    darbuotojas = models.ForeignKey('Darbuotojas',null=True, on_delete=models.SET_NULL)
+    darbuotojas = models.ForeignKey(User,null=True, on_delete=models.SET_NULL,blank=True)
     notes_choices = (
         ('aukstas', 'aukstas'),
         ('vidutinis', 'vidutinis'),
         ('zemas', 'zemas'),
         ('be pastebejimu', 'be pastebejimu'))
     note_type = models.CharField(_('Importance of the notes'),help_text='Rasto gedimo/pastabos svarba', max_length=40, choices=notes_choices, default='be pastebejimu',
-                                 blank=True)
-    notes = models.TextField(max_length=1000, help_text='labai svarbu pamineti ir smulkiausius gedimus, dekojame.')
+                                 null=True, blank=True)
+    notes = models.TextField(max_length=1000, help_text='labai svarbu pamineti ir smulkiausius gedimus, dekojame.',null=True, blank=True)
     LOAN_STATUS = (
         (_('ready'), _('ready')),
         ('taken', 'taken'),
         ('waiting_for_repair', 'waiting_for_repair'),
         ('repairing', 'repairing')
     )
-    status = models.CharField(_('Status'), max_length=30, choices=LOAN_STATUS, default='taken', help_text='Status', blank=True)
+    status = models.CharField(_('Status'), max_length=30, choices=LOAN_STATUS, default='taken', help_text='Status', null=True, blank=True)
 
 
     class Meta:
