@@ -86,7 +86,7 @@ class Darbo_laiko_irasai(models.Model):
 
 
     def __str__(self):
-        return f'{self.data} - {self.darbuotojas} - {self.shift_status} '
+        return f'{self.data} - {self.darbuotojas} - {self.working_zone.zone_code} - {self.status}  - {self.duration} - {self.picked_boxes}'
 
 
 class Notes(models.Model):

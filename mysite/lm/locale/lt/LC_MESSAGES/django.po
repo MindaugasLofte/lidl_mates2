@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-26 18:31+0200\n"
-"PO-Revision-Date: 2022-11-26 18:36+0200\n"
+"PO-Revision-Date: 2022-11-27 13:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: lt\n"
@@ -174,7 +174,7 @@ msgstr "naudojo "
 
 #: .\templates\lm\register.html:6
 msgid "Registration"
-msgstr "Užbaigti registraciją"
+msgstr "Registracija"
 
 #: .\templates\lm\register.html:17 .\templates\registration\login.html:22
 msgid "Username:"

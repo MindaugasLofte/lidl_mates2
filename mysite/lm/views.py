@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404, reverse, redirect
-from .models import Darbuotojas, Krautuvas, Darbo_zona_sandelyje
+from .models import Darbuotojas, Krautuvas, Darbo_zona_sandelyje, Notes,Darbo_laiko_irasai
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.forms import User
@@ -15,7 +15,24 @@ def index(request):
 
 # testuojame be html
 # return HttpResponse('Starting LIDL MATES!')
-    return render(request, 'lm/index.html')
+
+    num_working_zones = Darbo_zona_sandelyje.objects.all().count()
+    num_workers = Darbuotojas.objects.all().count()
+    num_notes = Notes.objects.all().count()
+    num_working_machines = Krautuvas.objects.all().count()
+    num_work_records = Darbo_laiko_irasai.objects.all().count()
+
+
+
+    context = {
+        'num_working_zones':num_working_zones,
+        'num_workers':num_workers,
+        'num_notes':num_notes,
+        'num_working_machines':num_working_machines,
+        'num_work_records':num_work_records,
+
+    }
+    return render(request, 'lm/index.html', context=context)
 
 def working_zones(request):
     working_zones = Darbo_zona_sandelyje.objects.all()
