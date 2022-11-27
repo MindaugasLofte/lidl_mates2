@@ -1,12 +1,11 @@
-from django.shortcuts import render,get_object_or_404, reverse, redirect
+from django.shortcuts import render, redirect
 from .models import Darbuotojas, Krautuvas, Darbo_zona_sandelyje, Notes,Darbo_laiko_irasai
-from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.forms import User
 from django.contrib import messages
 from django.utils.translation import gettext as _
 from django.db.models import Q
-from django.views.generic import TemplateView, ListView
+from django.views.generic import ListView
 
 # Create your views here.
 

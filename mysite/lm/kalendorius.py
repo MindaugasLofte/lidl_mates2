@@ -1,14 +1,14 @@
 import calendar
 
-
+# Ateiciai:
 # Create a plain text calendar
-def kalendorius(y,m,d,h):
-    c = calendar.TextCalendar(calendar.MONDAY)
-    str = c.formatmonth(y, m, d, h)
-    return print(str)
-
-
-k=kalendorius(2022,10,0,0)
+# def kalendorius(y,m,d,h):
+#     c = calendar.TextCalendar(calendar.MONDAY)
+#     str = c.formatmonth(y, m, d, h)
+#     return print(str)
+#
+#
+# k=kalendorius(2022,10,0,0)
 
 # # Create an HTML formatted calendar
 # hc = calendar.HTMLCalendar(calendar.MONDAY)
