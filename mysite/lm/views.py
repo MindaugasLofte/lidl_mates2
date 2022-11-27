@@ -34,7 +34,12 @@ def working_machines_list(request):
     return render(request, 'lm/working_machines_list.html', context=context)
 
 def workers(request):
-    return render(request, 'lm/workers.html')
+    workers = Darbuotojas.objects.all()
+    context = {
+        'workers': workers
+    }
+    # print(workers)
+    return render(request, 'lm/workers.html', context=context)
 
 def about(request):
     return render(request, 'lm/about.html')

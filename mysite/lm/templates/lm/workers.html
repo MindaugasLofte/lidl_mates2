@@ -13,7 +13,39 @@
 {% block content %}
 <h1>{% trans "All workers logged in app" %} </h1>
 
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">photo</th>
+      <th scope="col">picker_code</th>
+      <th scope="col">first_name</th>
+      <th scope="col">last_name</th>
+      <th scope="col">working_department</th>
+      <th scope="col">working_zone</th>
+          <th scope="col">position</th>
+          <th scope="col">working_since</th>
 
+
+    </tr>
+  </thead>
+  {% for worker in workers %}
+  <tbody>
+    <tr>
+      <th scope="row">-</th>
+      <td>        <img width=40vh class="rounded-circle account-img" src="{{worker.photo.url}}">
+</td>
+      <td>{{worker.picker_code}}</td>
+      <td>{{worker.first_name}}</td>
+      <td>{{worker.last_name}}</td>
+            <td>{{worker.working_department}}</td>
+            <td>{{worker.working_zone}}</td>
+            <td>{{worker.position}}</td>
+            <td>{{worker.working_since}}</td>
+    </tr>
+  </tbody>
+   {% endfor %}
+</table>
 
 
 {% endblock %}
