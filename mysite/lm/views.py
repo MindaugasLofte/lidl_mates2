@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404, reverse, redirect
-from .models import Darbuotojas, Krautuvas
+from .models import Darbuotojas, Krautuvas, Darbo_zona_sandelyje
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.forms import User
@@ -18,7 +18,12 @@ def index(request):
     return render(request, 'lm/index.html')
 
 def working_zones(request):
-    return render(request, 'lm/working_zones.html')
+    working_zones = Darbo_zona_sandelyje.objects.all()
+    context = {
+        'working_zones': working_zones
+    }
+    # print(working_zones)
+    return render(request, 'lm/working_zones.html', context=context)
 
 def working_machines_list(request):
     working_machines_list=Krautuvas.objects.all()

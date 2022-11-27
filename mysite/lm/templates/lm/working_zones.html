@@ -13,7 +13,27 @@
 {% block content %}
 <h1>{% trans "Working zones" %} </h1>
 
+<ul>
 
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Zone code</th>
+      <th scope="col">Zone description</th>
+    </tr>
+  </thead>
+  {% for zonos in working_zones %}
+  <tbody>
+    <tr>
+      <th scope="row">-</th>
+      <td>{{zonos.zone_code}}</td>
+      <td>{{zonos.zone_description}}</td>
+
+    </tr>
+  </tbody>
+   {% endfor %}
+</table>
 
 
 {% endblock %}
