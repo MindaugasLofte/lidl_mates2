@@ -21,7 +21,12 @@ def working_zones(request):
     return render(request, 'lm/working_zones.html')
 
 def working_machines_list(request):
-    return render(request, 'lm/working_machines_list.html')
+    working_machines_list=Krautuvas.objects.all()
+    context = {
+        'working_machines_list': working_machines_list
+    }
+    # print(working_machines_list)
+    return render(request, 'lm/working_machines_list.html', context=context)
 
 def workers(request):
     return render(request, 'lm/workers.html')
@@ -67,3 +72,5 @@ class SearchResultsView(ListView):
             Q(krautuvo_id__icontains=query)
         )
         return object_list
+
+

@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse
 
 # Create your models here.
 # ateiciai
@@ -128,7 +129,7 @@ class Krautuvas(models.Model):
 
 
     class Meta:
-        ordering = ['data_taken','note_type']
+        ordering = ['krautuvo_id']
         verbose_name = _("Vehicle")
         verbose_name_plural = _("Vehicles")
 
