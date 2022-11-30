@@ -36,8 +36,8 @@ Demo vartotojas lyginant su neprisijungusiu vartotoju galės pamatyti kaip atrod
 * paspaudus prisijungti ir suvedę demo user/psw - papulsite į tinklapį, o pasirinkę vartotojo aplinka  (EN - Dashboard) papulsite į Demo aplinką 
 ![img_1.png](img_1.png)
 * interneto naršyklėje parašę /admin [pvz pilnai atrodo 127.0.0.1:8080/admin/] pateksite į admin login, suvedę aukščiau nurodytus (user/psw)  
-* galėsite ne tik naršyti, filtruoti, bet ir įvesti duomenis.
-* ![img_2.png](img_2.png)
+galėsite ne tik naršyti, filtruoti, bet ir įvesti duomenis.
+![img_2.png](img_2.png)
 
 
 # EXTRA
