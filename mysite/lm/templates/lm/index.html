@@ -13,13 +13,13 @@
 {% block content %}
 <h1> {% trans "Index - main page" %}</h1>
 
-<ul>
-  <h4>Šiuo metu programoje yra:</h4>
+ <h4>Šiuo metu programoje yra:</h4>
+
 
   <table class="indexTable" >
   <tbody>
     <tr>
-      <th class="col-6 col-sm-4"scope="row">Darbo zonų sandėlyje:</th>
+      <th class="col-6 col-sm-4" scope="row">Darbo zonų sandėlyje:</th>
       <td class="col-6 col-sm-4">{{num_working_zones }}</td>
     </tr>
     <tr>
@@ -30,20 +30,18 @@
       <th class="col-6 col-sm-4" scope="row">Darbuotojų:</th>
       <td class="col-6 col-sm-4">{{ num_workers }}</td>
     </tr>
-      </tr>
     <tr>
-      <th class="col-6 col-sm-4"scope="row">Darbo laiko įrašų:</th>
+      <th class="col-6 col-sm-4" scope="row">Darbo laiko įrašų:</th>
       <td class="col-6 col-sm-4">{{ num_work_records }}</td>
     </tr>
-      </tr>
     <tr>
-      <th class="col-6 col-sm-4"scope="row">Užregistruotų pastabų:</th>
+      <th class="col-6 col-sm-4" scope="row">Užregistruotų pastabų:</th>
       <td class="col-6 col-sm-4">{{ num_notes }}</td>
     </tr>
   </tbody>
 </table>
 
-</ul>
+
 
 
 

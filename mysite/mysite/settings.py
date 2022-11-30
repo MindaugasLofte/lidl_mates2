@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'django_admin_search',
+
 ]
 
 MIDDLEWARE = [
@@ -62,7 +64,7 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'templates')
             # trumpesnis budas
                         # BASE_DIR / 'templates'
-],
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,8 +123,6 @@ LANGUAGES = (
     ('lt', _('Lithuanian')),
 )
 
-
-
 USE_I18N = True
 
 USE_TZ = False
@@ -153,7 +153,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_POST = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'mano_pastas@gmail.com' #is kurio siusime emailo resetinimo zinutes
+EMAIL_HOST_USER = 'mano_pastas@gmail.com' # is kurio siusime emailo resetinimo zinutes
 EMAIL_HOST_PASSWORD = 'secret'
 
 
