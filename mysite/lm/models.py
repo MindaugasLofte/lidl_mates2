@@ -2,11 +2,11 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from django.contrib.auth.models import User
-
+import datetime as dt
 
 # Create your models here.
-# ateiciai
-# HOUR_CHOICES = [(dt.time(hour=x), '{:02d}:00'.format(x)) for x in range(0, 24)]
+# jeigu reikia rinktis vbalandini duration
+HOUR_CHOICES = [(dt.time(hour=x), '{:02d}:00'.format(x)) for x in range(0, 16)]
 class Darbo_zona_sandelyje (models.Model):
     """modelis reprezentuojantis zonos numerį ir pavadinimą."""
     zone_choices = (
@@ -16,7 +16,7 @@ class Darbo_zona_sandelyje (models.Model):
         ('60', '60 - TIKO'),
         ('61', '61 - BakeOff'),
         ('70', '70 - Fruits'),
-        ('80', '80 - Mėsa'),
+        ('50', '50 - Mėsa'),
         ('90', '90 - NonFood')
         )
     zone_code = models.CharField(_('Working zone code'), max_length=80, choices=zone_choices, default='40', help_text='Darbo zona sandėlyje',
@@ -76,8 +76,8 @@ class Darbo_laiko_irasai(models.Model):
         ('pertrauka','pertrauka'),
         ('pietu pertrauka','pietu pertrauka'))
     status = models.CharField(_('Type of working record'), help_text='Darbo grafiko laiko tipas', max_length=40, choices= work_status, default='darbas', blank=True)
-    duration = models.DurationField(_('Duration'), help_text='darbo iraso trukme', null=True, blank=True)
-    picked_boxes = models.IntegerField(_('Picked boxes per duration'), help_text='Surinkta deziu per irasa', null=True, blank=True)
+    duration = models.CharField(_('Duration'), help_text='darbo iraso trukme', null=True, blank=True, default=dt.timedelta(hours=7), max_length=20)
+    picked_boxes = models.IntegerField(_('Picked boxes per duration'), help_text='Surinkta deziu per irasa', null=True, blank=True,default='0')
     class Meta:
         ordering = ['data']
         verbose_name = _("Working record")
@@ -112,7 +112,7 @@ class Notes(models.Model):
 class Krautuvas(models.Model):
     krautuvo_id = models.IntegerField(_('Vechiles ID "3 digits"'), help_text='krautuvo numeris', unique=True)
     data_taken = models.DateField(_('Date when vechiles was taken'), help_text='kada krautuvas paiimtas', null=True, blank=True)
-    darbuotojas = models.ForeignKey(User,null=True, on_delete=models.SET_NULL,blank=True)
+    darbuotojas = models.ForeignKey('Darbuotojas',null=True, on_delete=models.SET_NULL,blank=True)
     notes_choices = (
         ('aukstas', 'aukstas'),
         ('vidutinis', 'vidutinis'),
