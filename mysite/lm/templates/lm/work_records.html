@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+{% trans "Work records" %}
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="">
+{% endblock %}
+
+{% block content %}
+<h1>{% trans "Work records list" %} </h1>
+
+
+
+
+<table class="table ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Data</th>
+      <th scope="col">working_zone</th>
+      <th scope="col">Worker</th>
+      <th scope="col">status</th>
+       <th scope="col">duration</th>
+      <th scope="col">picked_boxes</th>
+    </tr>
+  </thead>
+  {% for record in work_records %}
+  <tbody>
+    <tr>
+      <th scope="row">-</th>
+      <td>{{record.data}}</td>
+      <td>{{record.working_zone}}</td>
+      <td>{{record.darbuotojas}}</td>
+      <td>{{record.status}}</td>
+      <td>{{record.duration}}</td>
+      <td>{{record.picked_boxes}}</td>
+    </tr>
+  </tbody>
+   {% endfor %}
+</table>
+
+<!--<div>-->
+<!--  <h2> Papildomai galite atlikti paiešką pagal krautuvo numerį (ID)</h2>-->
+<!-- <form class="d-flex" role="search" action="{% url 'search' %}" method="get">-->
+<!--    <input class="form-control me-2" name="query" type="search" placeholder=" Įveskite krautuvo triženklį numerį ar dalį jo, neįvedus skaičiaus: bus grąžintas visų krautuvų naudojimosi sąrašas." aria-label="Search">-->
+<!--    <button class="btn btn-outline-secondary" type="submit">{% trans "Search" %}</button>-->
+<!--</form>-->
+
+<!--</div>-->
+
+
+{% endblock %}

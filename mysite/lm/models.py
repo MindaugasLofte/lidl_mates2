@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
+from django.urls import reverse
 from django.contrib.auth.models import User
 import datetime as dt
 
@@ -82,6 +82,9 @@ class Darbo_laiko_irasai(models.Model):
         ordering = ['data']
         verbose_name = _("Working record")
         verbose_name_plural = _("Working records")
+    # def get_absolute_url(self):
+    #     """Nurodo  darbo iraso galutinį adresą"""
+    #     return reverse('work_records-detail', args=[str(self.id)])
 
     # def __str__(self):
     #     return f'{self.data} diena darbuotojas, kurio rinkejo kodas{self.darbuotojas.picker_code} surinko {self.picked_boxes} dezes'

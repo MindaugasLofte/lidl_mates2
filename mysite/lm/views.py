@@ -57,6 +57,14 @@ def workers(request):
     # print(workers)
     return render(request, 'lm/workers.html', context=context)
 
+def work_records(request):
+    work_records = Darbo_laiko_irasai.objects.all()
+    context = {
+        'work_records': work_records
+    }
+    # print(work_records)
+    return render(request, 'lm/work_records.html', context=context)
+
 def about(request):
     return render(request, 'lm/about.html')
 
