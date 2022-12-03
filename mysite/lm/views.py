@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.utils.translation import gettext as _
 from django.db.models import Q
 from django.views.generic import ListView
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -42,25 +43,39 @@ def working_zones(request):
     return render(request, 'lm/working_zones.html', context=context)
 
 def working_machines_list(request):
-    working_machines_list=Krautuvas.objects.all()
+    paginator = Paginator(Krautuvas.objects.all(), 9)
+    page_number = request.GET.get('page')
+    paged_working_machines_list = paginator.get_page(page_number)
+
+    # working_machines_list=Krautuvas.objects.all()
     context = {
-        'working_machines_list': working_machines_list
+        'working_machines_list': paged_working_machines_list
+        # 'working_machines_list': working_machines_list
     }
     # print(working_machines_list)
     return render(request, 'lm/working_machines_list.html', context=context)
 
 def workers(request):
-    workers = Darbuotojas.objects.all()
+    paginator = Paginator(Darbuotojas.objects.all(), 4)
+    page_number = request.GET.get('page')
+    paged_workers = paginator.get_page(page_number)
+    # workers = Darbuotojas.objects.all()
     context = {
-        'workers': workers
+        'workers': paged_workers
+        # 'workers': workers
     }
     # print(workers)
     return render(request, 'lm/workers.html', context=context)
 
 def work_records(request):
-    work_records = Darbo_laiko_irasai.objects.all()
+    paginator = Paginator(Darbo_laiko_irasai.objects.all(), 10)
+    page_number = request.GET.get('page')
+    paged_work_records = paginator.get_page(page_number)
+
+    # work_records = Darbo_laiko_irasai.objects.all()
     context = {
-        'work_records': work_records
+        'work_records': paged_work_records
+        # 'work_records': work_records
     }
     # print(work_records)
     return render(request, 'lm/work_records.html', context=context)

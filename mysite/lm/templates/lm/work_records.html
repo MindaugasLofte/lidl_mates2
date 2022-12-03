@@ -43,6 +43,27 @@
    {% endfor %}
 </table>
 
+<div class="container">
+  <nav aria-label="...">
+    {% if work_records.has_other_pages %}
+    <ul class="pagination pagination-sm justify-content-end">
+      {% for i in work_records.paginator.page_range %}
+        {% if work_records.number == i %}
+<!--      bus patemsintas skaiciuukas-->
+      <li class="page-item active">
+        <a class="page-link">{{i}}</a>
+      </li>
+      {% else %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{i}}">{{ i }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </nav>
+</div>
+
 <!--<div>-->
 <!--  <h2> Papildomai galite atlikti paiešką pagal krautuvo numerį (ID)</h2>-->
 <!-- <form class="d-flex" role="search" action="{% url 'search' %}" method="get">-->
