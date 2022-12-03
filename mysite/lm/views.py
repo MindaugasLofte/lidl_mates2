@@ -98,7 +98,7 @@ def register(request):
 
 class SearchResultsView(ListView):
     model = Krautuvas
-    template_name = "search.html"
+    template_name = "lm/working_machines_list_search.html"
 
     def get_queryset(self):  # new
         query = self.request.GET.get("query")
