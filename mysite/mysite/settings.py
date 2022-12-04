@@ -161,3 +161,6 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
     os.path.join(BASE_DIR, 'mysite', 'locale')
 )
+
+# custom user
+AUTH_USER_MODEL = 'lm.MyUser'

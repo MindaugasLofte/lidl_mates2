@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Darbuotojas, Krautuvas, Darbo_zona_sandelyje, Notes,Darbo_laiko_irasai
+from .models import MyUser, Krautuvas, Darbo_zona_sandelyje, Notes,Darbo_laiko_irasai
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.forms import User
 from django.contrib import messages
@@ -17,7 +17,7 @@ def index(request):
 # return HttpResponse('Starting LIDL MATES!')
 
     num_working_zones = Darbo_zona_sandelyje.objects.all().count()
-    num_workers = Darbuotojas.objects.all().count()
+    num_workers = MyUser.objects.all().count()
     num_notes = Notes.objects.all().count()
     num_working_machines = Krautuvas.objects.all().count()
     num_work_records = Darbo_laiko_irasai.objects.all().count()
@@ -56,10 +56,10 @@ def working_machines_list(request):
     return render(request, 'lm/working_machines_list.html', context=context)
 
 def workers(request):
-    paginator = Paginator(Darbuotojas.objects.all(), 4)
+    paginator = Paginator(MyUser.objects.all(), 4)
     page_number = request.GET.get('page')
     paged_workers = paginator.get_page(page_number)
-    # workers = Darbuotojas.objects.all()
+    # workers = MyUser.objects.all()
     context = {
         'workers': paged_workers
         # 'workers': workers

@@ -3,6 +3,9 @@ from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.contrib.auth.models import User
 import datetime as dt
+from django.contrib.auth.models import (
+    BaseUserManager, AbstractBaseUser
+)
 
 # Create your models here.
 # jeigu reikia rinktis vbalandini duration
@@ -28,13 +31,58 @@ class Darbo_zona_sandelyje (models.Model):
         verbose_name_plural = _("Working zones")
     def __str__(self):
         return f'{self.zone_code}'
+# custom user
+class MyUserManager(BaseUserManager):
+    def create_user(self, email, date_of_birth, password=None):
+        """
+        Creates and saves a User with the given email, date of
+        birth and password.
+        """
+        if not email:
+            raise ValueError('Users must have an email address')
 
-class Darbuotojas (models.Model):
-    """modelis reprezentuojantis darbuotoja."""
-    picker_code = models.CharField(_('Piker code'), help_text='rinkejo_kodas', max_length=3, unique=True)
-    first_name = models.CharField(_('First name'), help_text='Vardas', max_length=80)
-    last_name = models.CharField(_('Last name'), help_text='Pavardė', max_length=80)
-    working_zone = models.ForeignKey('Darbo_zona_sandelyje', null=True, on_delete=models.SET_NULL)
+        user = self.model(
+            email=self.normalize_email(email),
+            date_of_birth=date_of_birth,
+        )
+
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, date_of_birth, password=None):
+        """
+        Creates and saves a superuser with the given email, date of
+        birth and password.
+        """
+        user = self.create_user(
+            email,
+            password=password,
+            date_of_birth=date_of_birth,
+        )
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
+
+class MyUser(AbstractBaseUser):
+    email = models.EmailField(
+        verbose_name='email address',
+        max_length=255,
+        unique=True,
+    )
+    date_of_birth = models.DateField()
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=False)
+
+    objects = MyUserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['date_of_birth']
+
+    picker_code = models.CharField(_('Piker code'),help_text='rinkejo_kodas', max_length=3, unique=True)
+    first_name = models.CharField(_('First name'),help_text='Vardas', max_length=80)
+    last_name = models.CharField(_('Last name'),help_text='Pavardė', max_length=80)
+    working_zone = models.ForeignKey('Darbo_zona_sandelyje',null=True, on_delete=models.SET_NULL)
     working_department_choices = (
         ('Vilniaus apsk', 'Vilniaus apsk'),
         ('Vilniaus regioninis sandėlys', 'Vilniaus regioninis sandėlys'),
@@ -45,13 +93,13 @@ class Darbuotojas (models.Model):
     working_department = models.CharField(_('Working disctric or logistic warehouse'),max_length=80, choices=working_department_choices, default='Kauno regioninis sandėlys',
                                 help_text='Kurioje (-iame) apskrityje/logistikos sandėlyje dirbate', blank=True)
     position_choices = (
-        ('grupes vadovas', 'grupes vadovas'),
+        ('grupes vadovas','grupes vadovas'),
         ('grupes vadovo asistentas', 'grupes vadovo asistentas'),
         ('grupes vadovo asistentas', 'grupes vadovo asistentas'),
         ('prekiu komplektuotojas', 'prekiu komplektuotojas'))
-    position = models.CharField(_('Working position'), max_length=80, choices=position_choices, default='prekiu komplektuotojas', help_text='Darbuotojo pareigos', blank=True)
+    position = models.CharField(_('Working position'),max_length=80, choices=position_choices, default='prekiu komplektuotojas', help_text='Darbuotojo pareigos',blank=True)
     photo = models.ImageField(help_text='Darbuotojo foto arba avataras', upload_to='photos', null=True, blank=True)
-    working_since = models.DateField(_('Working since'), help_text='Darbo pradžia LIDL imoneje', null=True, blank=True)
+    working_since = models.DateField(_('Working since'),help_text='Darbo pradžia LIDL imoneje', null=True, blank=True)
 
     class Meta:
         ordering = ['last_name', 'first_name']
@@ -61,8 +109,28 @@ class Darbuotojas (models.Model):
     # def get_absolute_url(self):
     #     """Nurodo  darbuotojo galutinį adresą"""
     #     return reverse('darbuotojas-detail', args=[str(self.id)])
+    # def __str__(self):
+    #     return f'{self.last_name} {self.first_name}'
+
+
     def __str__(self):
-        return f'{self.last_name} {self.first_name}'
+        return self.email
+
+    def has_perm(self, perm, obj=None):
+        "Does the user have a specific permission?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    def has_module_perms(self, app_label):
+        "Does the user have permissions to view the app `app_label`?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    @property
+    def is_staff(self):
+        "Is the user a member of staff?"
+        # Simplest possible answer: All admins are staff
+        return self.is_admin
 
 class Darbo_laiko_irasai(models.Model):
     """modelis reprezentuojantis darbo laiko irasa
@@ -70,7 +138,7 @@ class Darbo_laiko_irasai(models.Model):
     """
     data = models.DateField(_('Date of working record'), help_text='kada dirbta', null=True, blank=True)
     working_zone = models.ForeignKey('Darbo_zona_sandelyje', max_length=80, null=True, on_delete=models.SET_NULL)
-    darbuotojas = models.ForeignKey('Darbuotojas',max_length=100, null=True, on_delete=models.SET_NULL)
+    darbuotojas = models.ForeignKey('MyUser',max_length=100, null=True, on_delete=models.SET_NULL)
     work_status = (
         ('darbas','darbas'),
         ('pertrauka','pertrauka'),
@@ -96,7 +164,7 @@ class Darbo_laiko_irasai(models.Model):
 
 class Notes(models.Model):
     data = models.DateField(_('Date'), help_text='kada zinute sukurta', null=True, blank=True)
-    darbuotojas = models.ForeignKey('Darbuotojas', null=True, on_delete=models.SET_NULL)
+    darbuotojas = models.ForeignKey('MyUser', null=True, on_delete=models.SET_NULL)
     notes_choices = (
         ('9', 'paprasta zinute sau'),
         ('0', 'reikia informuoti tiesiogini vadova'), #0 statusas bus isrikiuota auksciausiai
@@ -115,7 +183,7 @@ class Notes(models.Model):
 class Krautuvas(models.Model):
     krautuvo_id = models.IntegerField(_('Vechiles ID "3 digits"'), help_text='krautuvo numeris', unique=True)
     data_taken = models.DateField(_('Date when vechiles was taken'), help_text='kada krautuvas paiimtas', null=True, blank=True)
-    darbuotojas = models.ForeignKey('Darbuotojas',null=True, on_delete=models.SET_NULL,blank=True)
+    darbuotojas = models.ForeignKey('MyUser',null=True, on_delete=models.SET_NULL,blank=True)
     notes_choices = (
         ('aukstas', 'aukstas'),
         ('vidutinis', 'vidutinis'),
@@ -139,3 +207,4 @@ class Krautuvas(models.Model):
 
     def __str__(self):
         return f'{self.krautuvo_id} krautuvą {self.data_taken} dieną  naudojosi {self.darbuotojas} '
+
