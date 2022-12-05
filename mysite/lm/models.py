@@ -134,6 +134,23 @@ class MyUser(AbstractBaseUser):
         # Simplest possible answer: All admins are staff
         return self.is_admin
 
+    @property
+    def when_salary_increase(self):
+        if self.working_since:
+            dirbo_dienu=(dt.date.today() -self.working_since).days
+            # max_riba_algu_kelimui 3metai arba 1095d
+            if dirbo_dienu>=1095:
+                return f"Pasiekėte maksimalią III pakopą savo darbo pozicijoje. Norint gauti didesnę algą, turite prisiimti naujų iššūkių ir kilti karjeros laiptais!"
+            elif dirbo_dienu < 1095 and dirbo_dienu >= 730:
+                atimame_2metus=dirbo_dienu-730
+                return f"Esate II pakopoje savo darbo pozicijoje. Planuojamas atlyginimo kėlimas už {atimame_2metus} dienų!"
+            elif dirbo_dienu < 730 and dirbo_dienu >= 365:
+                atimame_1metus=dirbo_dienu-365
+                return f"Esate I pakopoje savo darbo pozicijoje. Planuojamas atlyginimo kėlimas už {atimame_1metus} dienų!"
+            else:
+                return f"kažkas negerai"
+
+
 class Darbo_laiko_irasai(models.Model):
     """modelis reprezentuojantis darbo laiko irasa
     galimi variantai:darbas, pertrauka arba pietu peretrauka.
