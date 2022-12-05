@@ -11,8 +11,7 @@
 {% endblock %}
 
 {% block content %}
-<h1> {% trans "Index - main page" %}</h1>
-
+<h1 class="p-4 text-primary d-flex justify-content-center"> {% trans "Index - main page" %}</h1>
  <h4>Šiuo metu programoje yra:</h4>
 
 
@@ -42,6 +41,25 @@
 </table>
 
 
+<div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4">
+    <h5 class="text-white h4">LIDL primena keletą svarbių dalykų, kitus skaitykite mūsų intranete:</h5>
+    <span class="text-muted">
+
+        <li>Šių metų "Metų idėjos" rinkimai užsidaro 2022-12-31. <strong>3000 eur</strong> už pirmą vietą! Kviečiame dalyvauti! </li>
+    <li>Šių metų veikatos draudimas galioja iki 2023-03-31.</li>
+    <li>Antradienias 20 val. Rio sporto komplekse KREPŠINIS. Trukmė 1,5 val.</li>
+    <li>Ketvirtadieniais 20 val. Jūsų laukia Girstučio vandens sporto kompleksas. Trukmė 1 val.</li>
+        </span>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span> Lidl primena
+    </button>
+  </div>
+</nav>
 
 
 
