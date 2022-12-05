@@ -7,7 +7,7 @@ from django.db.models import Q
 from django.views.generic import ListView
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
-from .forms import UserUpdateForm
+from .forms import UserUpdateForm, ProfilisUpdateForm
 
 # Create your views here.
 
@@ -136,22 +136,22 @@ def profilis(request):
         # u_form - user formas atnaujins
         u_form = UserUpdateForm(request.POST, instance=request.user)
         # # p_form - profilio formas atnaujins
-        # p_form = ProfilisUpdateForm(request.POST, request.FILES, instance=request.user.profilis)
-        if u_form.is_valid():
-        # if u_form.is_valid() and p_form.is_valid():
+        p_form = ProfilisUpdateForm(request.POST, request.FILES, instance=request.user.profilis)
+        # if u_form.is_valid():
+        if u_form.is_valid() and p_form.is_valid():
 
             u_form.save()
-            # p_form.save()
+            p_form.save()
             #  sios zinutes bus atvaozduotos per profilis.html zr 7-13 eilutes
             messages.success(request, f'Profilis atnaujintas')
             return redirect('profile')
     else:
         u_form = UserUpdateForm(instance=request.user)
-        # p_form = ProfilisUpdateForm(instance=request.user.profilis)
+        p_form = ProfilisUpdateForm(instance=request.user.profilis)
 
     context = {
         'u_form': u_form,
-        # 'p_form': p_form
+        'p_form': p_form
     }
     return render(request, 'lm/profilis.html', context)
 
