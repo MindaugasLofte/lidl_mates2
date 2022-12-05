@@ -14,14 +14,21 @@
     <form action="" method="post">
         {% csrf_token %}
         <div class="form-group">
-            <label for="username">{% trans 'Username:' %}</label>
-            <input name="username" type="text" class="form-control" id="username">
-            <small class="form-text text-muted">{% trans 'Up to 100 simbols' %}</small>
-        </div>
-        <div class="form-group">
-            <label for="email">{% trans 'E-mail' %} </label>
+            <label for="email">{% trans 'Registration email (Username):' %}</label>
             <input name="email" type="email" class="form-control" id="email">
             <small class="form-text text-muted">{% trans 'We will not send any spam, only for password reset issues.' %}</small>
+        </div>
+
+        <div class="form-group">
+            <label for="date_of_birth">{% trans 'date_of_birth' %} </label>
+            <input name="date_of_birth" type="date" class="form-control" id="date_of_birth">
+            <small class="form-text text-muted">{% trans 'date_of_birth' %}</small>
+        </div>
+
+            <div class="form-group">
+            <label for="picker_code">{% trans 'Picker code' %} </label>
+            <input name="picker_code" type="number" class="form-control" id="picker_code">
+            <small class="form-text text-muted">{% trans 'picker_code' %}</small>
         </div>
         <div class="form-group">
             <label for="password"> {% trans 'Password' %}</label>

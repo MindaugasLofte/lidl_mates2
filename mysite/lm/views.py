@@ -90,20 +90,21 @@ def dashboard(request):
 def register(request):
     if request.method == 'POST':
         #pasiimti duomenis iš formos
-        username = request.POST['username']
+        picker_code = request.POST['picker_code']
+        date_of_birth = request.POST['date_of_birth']
         email = request.POST ['email']
         password = request.POST['password']
         password2 = request.POST['password2']
         if password == password2:
-            if User.objects.filter(username=username).exists():
-                messages.error(request, _('Username %s already exists!') % username)
+            if MyUser.objects.filter(picker_code=picker_code).exists():
+                messages.error(request, _('Username %s already exists!') % picker_code)
                 return redirect('register')
             else:
-                if User.objects.filter(email=email).exists():
+                if MyUser.objects.filter(email=email).exists():
                     messages.error(request, _('Username with %s already exists!') % email)
                     return redirect('register')
                 else:
-                    User.objects.create_user(username=username, email=email, password=password)
+                    MyUser.objects.create_user(picker_code=picker_code, email=email, password=password, date_of_birth=date_of_birth)
                     return render(request, 'lm/welcome.html')
         else:
             messages.error(request, _('Passwords do no match!'))
