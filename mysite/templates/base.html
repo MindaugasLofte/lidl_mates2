@@ -47,7 +47,7 @@
 
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="">
+                    <a class="nav-link text-secondary" href="{% url 'profile' %}">
                         <svg class="bi bi-person" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor"
                              xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -59,7 +59,6 @@
                     <a class="nav-link text-secondary" href="{% url 'dashboard' %}">{% trans "Dashboard" %}</a>
                 </li>
 
-<!--                neveikia sutvarkyti-->
    <li>
      <div class="dropdown">
          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

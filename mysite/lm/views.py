@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
 from .models import MyUser, Krautuvas, Darbo_zona_sandelyje, Notes,Darbo_laiko_irasai
 from django.views.decorators.csrf import csrf_protect
-from django.contrib.auth.forms import User
 from django.contrib import messages
 from django.utils.translation import gettext as _
 from django.db.models import Q
 from django.views.generic import ListView
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
+from .forms import UserUpdateForm
 
 # Create your views here.
 
@@ -122,5 +123,36 @@ class SearchResultsView(ListView):
             Q(krautuvo_id__icontains=query)
         )
         return object_list
+
+# @login_required
+# def profilis(request):
+#     return render(request, 'lm/profilis.html')
+
+
+@login_required
+def profilis(request):
+
+    if request.method == 'POST':
+        # u_form - user formas atnaujins
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        # # p_form - profilio formas atnaujins
+        # p_form = ProfilisUpdateForm(request.POST, request.FILES, instance=request.user.profilis)
+        if u_form.is_valid():
+        # if u_form.is_valid() and p_form.is_valid():
+
+            u_form.save()
+            # p_form.save()
+            #  sios zinutes bus atvaozduotos per profilis.html zr 7-13 eilutes
+            messages.success(request, f'Profilis atnaujintas')
+            return redirect('profile')
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        # p_form = ProfilisUpdateForm(instance=request.user.profilis)
+
+    context = {
+        'u_form': u_form,
+        # 'p_form': p_form
+    }
+    return render(request, 'lm/profilis.html', context)
 
 

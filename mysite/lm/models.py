@@ -1,12 +1,12 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 import datetime as dt
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
-
+from PIL import Image
 # Create your models here.
 # jeigu reikia rinktis vbalandini duration
 HOUR_CHOICES = [(dt.time(hour=x), '{:02d}:00'.format(x)) for x in range(0, 16)]
@@ -100,7 +100,7 @@ class MyUser(AbstractBaseUser):
         ('grupes vadovo asistentas', 'grupes vadovo asistentas'),
         ('prekiu komplektuotojas', 'prekiu komplektuotojas'))
     position = models.CharField(_('Working position'),max_length=80, choices=position_choices, default='prekiu komplektuotojas', help_text='Darbuotojo pareigos',blank=True)
-    photo = models.ImageField(help_text='Darbuotojo foto arba avataras', upload_to='photos', null=True, blank=True)
+    photo = models.ImageField(help_text='Darbuotojo foto arba avataras', upload_to='profile_pics', null=True, blank=True, default='default.png')
     working_since = models.DateField(_('Working since'),help_text='Darbo pradžia LIDL imoneje', null=True, blank=True)
 
     class Meta:
@@ -209,4 +209,25 @@ class Krautuvas(models.Model):
 
     def __str__(self):
         return f'{self.krautuvo_id} krautuvą {self.data_taken} dieną  naudojosi {self.darbuotojas} '
+
+class Profilis(models.Model):
+    # cascade sako, kad jei istrinsiu vartotoja ir profilis issitrins
+    user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
+    # default.png turi buti library-media folderyje
+    photo = models.ImageField(default='default.png', upload_to='profile_pics', null=True) #media-profile_pics kataloge jas saugos
+    # cia jei bus vienaskaita arba daugiskaita, pagal tai nurodys
+    class Meta:
+        verbose_name = 'Profilis'
+        verbose_name_plural = 'Profiliai'
+    def __str__(self):
+        return f"{self.user.email} profilis"
+
+# 1114paskaitos 2v kad matytusi nuotraukos vienodo dydzio
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        img = Image.open(self.photo.path)
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.photo.path)
 

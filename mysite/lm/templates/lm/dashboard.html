@@ -11,20 +11,49 @@
 {% endblock %}
 
 {% block content %}
-<h1>DEMO  - {% trans "Dashboard" %}</h1>
 
-<a>{% trans "Only your data here" %}: </a>
+
+<div class="d-flex flex-row-reverse">
+  <div class="p-2 text-info bg-dark">Šios dienos data: {% now "Y m d " %} ir {% now "H" %} valanda</div>
+</div>
+<div class="bg-success p-2" style="--bs-bg-opacity: .5;"><a>{% trans "Only your data here" %}</a></div>
+<h3 class="text-primary">{{user.email.upper}} - {% trans "Dashboard" %}  </h3>
+<a> </a>
+
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{user.profilis.photo.url}}">
+        <div class="media-body">
+            <h2 class="account-heading">{{user.username}}</h2>
+            <p class="text-secondary"></p>
+        </div>
+    </div>
 <ul>
-  <li>Vardas ir pavardė: DEMO</li>
-  <li>Įsidarbinta: 2022-01-31</li>
-  <li>Planuojama atlyginimo kėlimo pakopa už 64d.</li>
-  <li>Sveikatos draudimas galioja iki 2023-03-31</li>
-  <li>Šių metų "Metų idėjos" rinkimai užsidaro po 34d. 3000eur už pirmą vietą! Kviečiame dalyvauti! </li>
-
-
+  <li>  Please update your information, push: <a href="{% url 'profile' %}">here</a> </li>
+  <li>Vardas ir pavardė: <a class="text-success">{{user.first_name.upper}} {{user.last_name.upper}}</a></li>
+  <li>Įsidarbinta: <a class="text-success">{{user.working_since}}</a></li>
+  <li>Planuojama atlyginimo kėlimo pakopa už <a class="text-success">{{user.working_since}}d.</a></li>
 
 
 </ul>
+<div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4">
+    <h5 class="text-white h4">LIDL primena keletą svarbių dalykų, kitus skaitykite mūsų intranete:</h5>
+    <span class="text-muted">
+
+        <li>Šių metų "Metų idėjos" rinkimai užsidaro 2022-12-31. <strong>3000 eur</strong> už pirmą vietą! Kviečiame dalyvauti! </li>
+    <li>Šių metų veikatos draudimas galioja iki 2023-03-31.</li>
+    <li>Antradienias 20 val. Rio sporto komplekse KREPŠINIS. Trukmė 1,5 val.</li>
+    <li>Ketvirtadieniais 20 val. Jūsų laukia Girstučio vandens sporto kompleksas. Trukmė 1 val.</li>
+        </span>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span> Lidl primena
+    </button>
+  </div>
+</nav>
 
 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

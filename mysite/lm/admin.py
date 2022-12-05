@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import MyUser, Darbo_laiko_irasai, Darbo_zona_sandelyje, Notes, Krautuvas
+from . models import MyUser, Darbo_laiko_irasai, Darbo_zona_sandelyje, Notes, Krautuvas, Profilis
 from django import forms
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
@@ -113,7 +113,7 @@ admin.site.register(Darbo_laiko_irasai, Darbo_laiko_irasaiAdmin)
 admin.site.register(Darbo_zona_sandelyje, Darbo_zona_sandelyjeAdmin)
 admin.site.register(Notes, NotesAdmin)
 admin.site.register(Krautuvas, KrautuvasAdmin)
-
+admin.site.register(Profilis)
 
 # ... and, since we're not using Django's built-in permissions,
 # unregister the Group model from admin.

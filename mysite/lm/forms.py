@@ -1,3 +1,8 @@
-from .models import Krautuvas
+from .models import MyUser, Profilis
 from django import forms
-from django.contrib.auth.models import User
+
+class UserUpdateForm(forms.ModelForm):
+    email = forms.EmailField()
+    class Meta:
+        model = MyUser
+        fields = [ "first_name", "last_name", 'email', 'picker_code', "working_department", "working_zone", "position", "working_since",'date_of_birth', 'photo']
