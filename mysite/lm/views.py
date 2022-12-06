@@ -164,3 +164,10 @@ class NotesListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 2
     def get_queryset(self):
         return Notes.objects.filter(darbuotojas=self.request.user).order_by('data')
+class WorkersWorkingRecordsListView(LoginRequiredMixin, generic.ListView):
+    model = Darbo_laiko_irasai
+    template_name = 'lm/worker_working_records.html'
+    context_object_name = 'my_working_records'
+    paginate_by = 2
+    def get_queryset(self):
+        return Darbo_laiko_irasai.objects.filter(darbuotojas=self.request.user).order_by('data')

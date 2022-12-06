@@ -169,13 +169,16 @@ class Darbo_laiko_irasai(models.Model):
         ordering = ['data']
         verbose_name = _("Working record")
         verbose_name_plural = _("Working records")
-    # def get_absolute_url(self):
-    #     """Nurodo  darbo iraso galutinį adresą"""
-    #     return reverse('work_records-detail', args=[str(self.id)])
+    def get_absolute_url(self):
+        """Nurodo  darbo iraso galutinį adresą"""
+        return reverse('Darbo_laiko_irasai', args=[str(self.data)])
 
     # def __str__(self):
     #     return f'{self.data} diena darbuotojas, kurio rinkejo kodas{self.darbuotojas.picker_code} surinko {self.picked_boxes} dezes'
-
+    # @property
+    # def pick_rate_per_hour(self):
+    #     if self.duration and self.picked_boxes:
+    #         return self.picked_boxes/int(float(self.duration))
 
     def __str__(self):
         return f'{self.data} - {self.darbuotojas} - {self.working_zone.zone_code} - {self.status}  - {self.duration} - {self.picked_boxes}'
