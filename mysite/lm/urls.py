@@ -15,5 +15,6 @@ urlpatterns = [
     path('profile/', views.profilis, name='profile'),
     path('my_notes/', views.NotesListView.as_view(), name='my_notes'),
     path('my_working_records/', views.WorkersWorkingRecordsListView.as_view(), name='my_working_records'),
+    path('my_used_machines/', views.WorkersUsedMachinesListView.as_view(), name='my_used_machines'),
 
 ]

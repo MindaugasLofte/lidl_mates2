@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import MyUser, Krautuvas, Darbo_zona_sandelyje, Notes,Darbo_laiko_irasai,Notes
+from .models import MyUser, Krautuvas, Darbo_zona_sandelyje, Notes,Darbo_laiko_irasai
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
 from django.utils.translation import gettext as _
@@ -171,3 +171,11 @@ class WorkersWorkingRecordsListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 2
     def get_queryset(self):
         return Darbo_laiko_irasai.objects.filter(darbuotojas=self.request.user).order_by('data')
+
+class WorkersUsedMachinesListView(LoginRequiredMixin, generic.ListView):
+    model = Krautuvas
+    template_name = 'lm/worker_used_machines.html'
+    context_object_name = 'my_used_machines'
+    paginate_by = 2
+    def get_queryset(self):
+        return Krautuvas.objects.filter(darbuotojas=self.request.user).order_by('data_taken')

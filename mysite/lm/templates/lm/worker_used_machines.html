@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-{% trans "Worker used machines" %}
+{% trans "Worker Working records" %}
 {% endblock %}
 
 {% block css_files %}
@@ -11,33 +11,33 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="p-4 text-primary d-flex justify-content-center">{{user.first_name.upper }} {{user.last_name.upper }} {% trans "working records" %} </h1>
+<h1 class="p-4 text-primary d-flex justify-content-center">{{user.first_name.upper }} {{user.last_name.upper }} {% trans "used machines" %} </h1>
 
-{% if my_working_records %}
+{% if my_used_machines %}
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">data</th>
-      <th scope="col">working_zone</th>
+      <th scope="col">data_taken</th>
+      <th scope="col">krautuvo_id</th>
+      <th scope="col">note_type</th>
+      <th scope="col">notes</th>
       <th scope="col">status</th>
-      <th scope="col">duration</th>
-      <th scope="col">picked_boxes</th>
 <!--      <th scope="col">pick_rate_per_hour</th>-->
 <!--      <th scope="col"></th>-->
 <!--      <th scope="col"></th>-->
     </tr>
   </thead>
-   {% for record in my_working_records %}
+   {% for record in my_used_machines %}
   <tbody>
     <tr>
       <th scope="row">-</th>
-      <td>{{record.data}}</td>
-      <td>{{record.working_zone}}</td>
+      <td>{{record.data_taken}}</td>
+      <td>{{record.krautuvo_id}}</td>
+      <td>{{record.note_type}}</td>
+      <td>{{record.notes}}</td>
       <td>{{record.status}}</td>
-      <td>{{record.duration}}</td>
-      <td>{{record.picked_boxes}}</td>
 
 
 
@@ -64,7 +64,7 @@
        </span>
    </div>
 {% else %}
-<p>Šiuo metu neradome Jūsų darbo įrašų.</p>
+<p>{% trans "We do not find any work machines in use right now or used before." %}</p>
 {% endif %}
 
 
