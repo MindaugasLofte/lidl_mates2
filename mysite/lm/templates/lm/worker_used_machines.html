@@ -22,8 +22,8 @@
       <th scope="col">data_taken</th>
       <th scope="col">krautuvo_id</th>
       <th scope="col">note_type</th>
-      <th scope="col">notes</th>
       <th scope="col">status</th>
+      <th scope="col">notes</th>
 <!--      <th scope="col">pick_rate_per_hour</th>-->
 <!--      <th scope="col"></th>-->
 <!--      <th scope="col"></th>-->
@@ -36,8 +36,9 @@
       <td>{{record.data_taken}}</td>
       <td>{{record.krautuvo_id}}</td>
       <td>{{record.note_type}}</td>
-      <td>{{record.notes}}</td>
       <td>{{record.status}}</td>
+      <td>{{record.notes | safe}}</td>
+
 
 
 

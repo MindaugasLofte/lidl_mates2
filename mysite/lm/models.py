@@ -7,6 +7,7 @@ from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
 from PIL import Image
+from tinymce.models import HTMLField
 # Create your models here.
 # jeigu reikia rinktis vbalandini duration
 HOUR_CHOICES = [(dt.time(hour=x), '{:02d}:00'.format(x)) for x in range(0, 16)]
@@ -192,7 +193,7 @@ class Notes(models.Model):
         ('0', 'reikia informuoti tiesiogini vadova'), #0 statusas bus isrikiuota auksciausiai
         ('8', 'metu ideja'))
     note_type = models.CharField(_('Type of notes'), help_text='Zinutes tipas', max_length=40, choices=notes_choices, default='9', null=True, blank=True)
-    summary = models.TextField(_('Description of the notes'),max_length=1000, help_text='Svarbu aprasyti placiau, aciu uz jusu laika.', null=True, blank=True)
+    summary = HTMLField(help_text='Rašykite ką norite!kiti varotojai nematys jusu zinutes', null=True, blank=True)
 
     class Meta:
         ordering = ['data', 'note_type']
@@ -206,14 +207,6 @@ class Krautuvas(models.Model):
     krautuvo_id = models.IntegerField(_('Vechiles ID "3 digits"'), help_text='krautuvo numeris', unique=True)
     data_taken = models.DateField(_('Date when vechiles was taken'), help_text='kada krautuvas paiimtas', null=True, blank=True)
     darbuotojas = models.ForeignKey('MyUser',null=True, on_delete=models.SET_NULL,blank=True)
-    notes_choices = (
-        ('aukstas', 'aukstas'),
-        ('vidutinis', 'vidutinis'),
-        ('zemas', 'zemas'),
-        ('be pastebejimu', 'be pastebejimu'))
-    note_type = models.CharField(_('Importance of the notes'), help_text='Rasto gedimo/pastabos svarba', max_length=40, choices=notes_choices, default='be pastebejimu',
-                                 null=True, blank=True)
-    notes = models.TextField(max_length=1000, help_text='labai svarbu pamineti ir smulkiausius gedimus, dekojame.', null=True, blank=True)
     LOAN_STATUS = (
         (_('ready'), _('ready')),
         ('taken', 'taken'),
@@ -221,6 +214,15 @@ class Krautuvas(models.Model):
         ('repairing', 'repairing')
     )
     status = models.CharField(_('Status'), max_length=30, choices=LOAN_STATUS, default='taken', help_text='Status', null=True, blank=True)
+    notes_choices = (
+        ('aukstas', 'aukstas'),
+        ('vidutinis', 'vidutinis'),
+        ('zemas', 'zemas'),
+        ('be pastebejimu', 'be pastebejimu'))
+    note_type = models.CharField(_('Importance of the notes'), help_text='Rasto gedimo/pastabos svarba', max_length=40, choices=notes_choices, default='be pastebejimu',
+                                 null=True, blank=True)
+
+    notes = HTMLField(help_text='labai svarbu pamineti ir smulkiausius gedimus, dekojame.', null=True, blank=True)
 
     class Meta:
         ordering = ['krautuvo_id']
