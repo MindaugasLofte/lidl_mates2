@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import MyUser, Krautuvas, Darbo_zona_sandelyje, Notes,Darbo_laiko_irasai
+from .models import MyUser, Krautuvas, Darbo_zona_sandelyje, Notes,Darbo_laiko_irasai,Notes
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
 from django.utils.translation import gettext as _
@@ -8,6 +8,8 @@ from django.views.generic import ListView
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from .forms import UserUpdateForm, ProfilisUpdateForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views import generic
 
 # Create your views here.
 
@@ -155,4 +157,10 @@ def profilis(request):
     }
     return render(request, 'lm/profilis.html', context)
 
-
+class NotesListView(LoginRequiredMixin, generic.ListView):
+    model = Notes
+    template_name = 'lm/worker_notes.html'
+    context_object_name = 'my_notes'
+    paginate_by = 2
+    def get_queryset(self):
+        return Notes.objects.filter(darbuotojas=self.request.user).order_by('data')

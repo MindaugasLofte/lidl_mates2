@@ -67,8 +67,12 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">{% trans "Add working day" %}</a>
           <a class="dropdown-item" href="#">{% trans "Add note" %}</a>
-          <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">{% trans "Book working machine" %}</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">{% trans "Your working records" %}</a>
+          <a class="dropdown-item" href="{% url 'my_notes' %}">{% trans "Your notes" %}</a>
+          <a class="dropdown-item" href="#">{% trans "Your used working machines" %}</a>
+
         </div>
 
      </div>

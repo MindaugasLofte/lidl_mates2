@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+{% trans "Worker Notes" %}
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="">
+{% endblock %}
+
+{% block content %}
+<h1 class="p-4 text-primary d-flex justify-content-center">{{user.first_name.upper }} {{user.last_name.upper }} {% trans "Notes" %} </h1>
+
+{% if my_notes %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">data</th>
+      <th scope="col">Note type</th>
+      <th scope="col">Summary</th>
+    </tr>
+  </thead>
+   {% for note in my_notes %}
+  <tbody>
+    <tr>
+      <th scope="row">-</th>
+      <td>{{note.data}}</td>
+      <td>{{note.note_type}}</td>
+      <td>{{note.summary}}</td>
+
+    </tr>
+  </tbody>
+   {% endfor %}
+</table>
+<div class="pagination d-flex justify-content-center">
+
+       <span class="step-links">
+           {% if page_obj.has_previous %}
+           <a href="?page=1">&laquo; pirmas</a>
+           <a href="?page={{ page_obj.previous_page_number }}">atgal</a>
+           {% endif %}
+
+           <span class="current">
+               {{page_obj.number}} iš {{page_obj.paginator.num_pages}}
+           </span>
+
+           {% if page_obj.has_next %}
+           <a href="?page={{page_obj.next_page_number}}">pirmyn</a>
+           <a href="?page={{page_obj.paginator.num_pages}}">paskutinis &raquo;</a>
+           {% endif %}
+       </span>
+   </div>
+{% else %}
+<p>Šiuo metu jūs dar nesate įrašę jokių pastabų ar idėjų.</p>
+{% endif %}
+
+
+{% endblock %}
