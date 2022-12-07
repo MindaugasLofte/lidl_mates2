@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b7f21cd-f611-4ff9-89bb-8c733e97d2f1" name="Changes" comment="1. atnaujinant useri, kur yra datos ivestis - bus lengviau&#10;2. registruojantis nebereiks vesti gimimo datos&#10;3. prie masinu pridejau record ID">
+    <list default="true" id="1b7f21cd-f611-4ff9-89bb-8c733e97d2f1" name="Changes" comment="1. pataisyta, dabar gerai skaiciuoja dashboarde, kiek iki kito algos kelimo yra dienu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/static/lm/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/static/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/app.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,17 +48,17 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/brask/Desktop/IT/test/vigi25-projects/mysite/lm/templates/lm",
+    "last_opened_file_path": "C:/Users/brask/Desktop/IT/test/vigi25-projects/mysite/static",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\lm\templates\lm" />
       <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\static" />
+      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\lm\static" />
+      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\static\css" />
+      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\lm\templates\lm" />
       <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\lm\static\lm" />
-      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\lm\static\css" />
-      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\lm\base\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\static" />
@@ -313,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670379893257</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="1. pataisyta, dabar gerai skaiciuoja dashboarde, kiek iki kito algos kelimo yra dienu">
+      <created>1670433653048</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1670433653048</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -329,7 +337,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="visos darbo zonos atvaizduojamos working_zones.html, lenteleje." />
     <MESSAGE value="visi admin pagalba suregistruoti darbuotojai  atvaizduojami workers, lenteleje." />
     <MESSAGE value="1) index.html parodome administratoriaus suvestus duomenis. ju kiekius&#10;2) Darbo_laiko_irasai modelyje daugiau duomenu atvaizduosime ji iskvietus&#10;3) puslapiu lenteles pakeiciaus, kad nebutu juodos spalvos&#10;4) su Admin ivedziau keleta papildomo irasu, kuriu nebuvo" />
     <MESSAGE value="1) picker_code, krautuvo_id, zone_code nuo siol bus tik unikalus&#10;2) models.py dalis lauku bus neprivalomi&#10;3) jeigu darbuotojas netures foto, jos ir neatvaizduos, if loop pagalba ignoruos jei nebus foto" />
@@ -354,6 +361,7 @@
     <MESSAGE value="1. Krautuvas atributas notes ir Notes atributas summary tures wordpreso galimybiu su tinymce" />
     <MESSAGE value="1. Krautuvas atributas krautuvas id nebus unikalus (unique=False)&#10;2. vartotojas gales ivesti savo aplinkoje nauja darbo masina. (ivedimo notes ir working records nespejau, bet templatai ir pradzia padaryta)&#10;3. update ir delete darbo masinos iraso nespejau padaryti" />
     <MESSAGE value="1. atnaujinant useri, kur yra datos ivestis - bus lengviau&#10;2. registruojantis nebereiks vesti gimimo datos&#10;3. prie masinu pridejau record ID" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. atnaujinant useri, kur yra datos ivestis - bus lengviau&#10;2. registruojantis nebereiks vesti gimimo datos&#10;3. prie masinu pridejau record ID" />
+    <MESSAGE value="1. pataisyta, dabar gerai skaiciuoja dashboarde, kiek iki kito algos kelimo yra dienu" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. pataisyta, dabar gerai skaiciuoja dashboarde, kiek iki kito algos kelimo yra dienu" />
   </component>
 </project>
