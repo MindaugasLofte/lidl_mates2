@@ -144,10 +144,15 @@ class MyUser(AbstractBaseUser):
                 return f"Pasiekėte maksimalią III pakopą savo darbo pozicijoje. Norint gauti didesnę algą, turite prisiimti naujų iššūkių ir kilti karjeros laiptais!"
             elif dirbo_dienu < 1095 and dirbo_dienu >= 730:
                 atimame_2metus=dirbo_dienu-730
-                return f"Esate II pakopoje savo darbo pozicijoje. Planuojamas atlyginimo kėlimas už {atimame_2metus} dienų!"
+                alga_kils2=360-atimame_2metus
+                return f"Esate II pakopoje savo darbo pozicijoje. Planuojamas atlyginimo kėlimas už {alga_kils2} dienų!"
             elif dirbo_dienu < 730 and dirbo_dienu >= 365:
                 atimame_1metus=dirbo_dienu-365
-                return f"Esate I pakopoje savo darbo pozicijoje. Planuojamas atlyginimo kėlimas už {atimame_1metus} dienų!"
+                alga_kils1 = 360 - atimame_1metus
+                return f"Esate I pakopoje savo darbo pozicijoje. Planuojamas atlyginimo kėlimas už {alga_kils1} dienų!"
+            elif dirbo_dienu < 365:
+                alga_kils = 365 - dirbo_dienu
+                return f"Esate I pakopoje savo darbo pozicijoje. Planuojamas atlyginimo kėlimas už {alga_kils} dienų!"
             else:
                 return f"kažkas negerai"
 
