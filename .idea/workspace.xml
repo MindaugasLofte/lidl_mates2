@@ -5,10 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b7f21cd-f611-4ff9-89bb-8c733e97d2f1" name="Changes" comment="1. pataisyta, dabar gerai skaiciuoja dashboarde, kiek iki kito algos kelimo yra dienu">
+      <change afterPath="$PROJECT_DIR$/mysite/lm/media/profile_pics/favicon_2.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/lm/media/profile_pics/lt_icon_128084.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/lm/media/profile_pics/no_photo_CmbbrHO.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/lm/media/profile_pics/no_photo_Y71MyT7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/lm/media/profile_pics/no_photo_qMEOz6J.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/lm/media/profile_pics/sveikinimas.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/static/lm/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/static/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/darbo_grafikas.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/darbo_grafikas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/user_notes_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/user_notes_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/user_worker_record_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/user_worker_record_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/work_records.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/work_records.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/worker.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/worker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/worker_machine_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/worker_machine_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/workers.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/workers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/working_machines_list_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/working_machines_list_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,18 +60,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/brask/Desktop/IT/test/vigi25-projects/mysite/static",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/brask/Desktop/IT/test/vigi25-projects/mysite/static&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PythonContentEntriesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\static" />

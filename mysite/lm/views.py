@@ -3,7 +3,7 @@ from .models import MyUser, Krautuvas, Darbo_zona_sandelyje, Notes,Darbo_laiko_i
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
 from django.utils.translation import gettext as _
-from django.db.models import Q
+from django.db.models import Q, Max
 from django.views.generic import ListView
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
@@ -12,7 +12,8 @@ from .forms import UserUpdateForm, ProfilisUpdateForm, UserKrautuvasCreateForm
 
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import generic
-
+from django.db.models import Sum
+import operator
 
 # Create your views here.
 
@@ -28,7 +29,11 @@ def index(request):
     num_working_machines = Krautuvas.objects.all().count()
     num_work_records = Darbo_laiko_irasai.objects.all().count()
 
-
+    total_picked_boxes=Darbo_laiko_irasai.objects.aggregate(Sum('picked_boxes'))['picked_boxes__sum']
+    average_boxes_picked_per_day=round(total_picked_boxes/num_work_records)
+    # max(stats.items(), key=operator.itemgetter(1))[0]
+    most_picked_so_far=Darbo_laiko_irasai.objects.aggregate(Max('picked_boxes'))['picked_boxes__max']
+    test=1
 
     context = {
         'num_working_zones':num_working_zones,
@@ -36,6 +41,10 @@ def index(request):
         'num_notes':num_notes,
         'num_working_machines':num_working_machines,
         'num_work_records':num_work_records,
+        'total_picked_boxes':total_picked_boxes,
+        'average_boxes_picked_per_day':average_boxes_picked_per_day,
+        'most_picked_so_far':most_picked_so_far,
+        'test': test,
 
     }
     return render(request, 'lm/index.html', context=context)
@@ -53,22 +62,20 @@ def working_machines_list(request):
     page_number = request.GET.get('page')
     paged_working_machines_list = paginator.get_page(page_number)
 
-    # working_machines_list=Krautuvas.objects.all()
     context = {
         'working_machines_list': paged_working_machines_list
-        # 'working_machines_list': working_machines_list
     }
     # print(working_machines_list)
     return render(request, 'lm/working_machines_list.html', context=context)
 
 def workers(request):
-    paginator = Paginator(MyUser.objects.all(), 4)
+    paginator = Paginator(MyUser.objects.all(), 6)
     page_number = request.GET.get('page')
     paged_workers = paginator.get_page(page_number)
-    # workers = MyUser.objects.all()
+
     context = {
         'workers': paged_workers
-        # 'workers': workers
+
     }
     # print(workers)
     return render(request, 'lm/workers.html', context=context)
@@ -224,7 +231,7 @@ class KrautuvasByUserCreateView(LoginRequiredMixin, generic.CreateView):
 #      def test_func(self):
 #          motherModelOfKrautuvasLower_instance = self.get_object()
 #          return motherModelOfKrautuvasLower_instance.darbuotojas == self.request.user
-## neveikia reikia sukurti modeli motina krautuvui# neveikia reikia sukurti modeli motina krautuvui
+## neveikia reikia gal sukurti modeli motina krautuvui kai book buvo bookinsanse
 
 
 # class NotesByUserCreateView(LoginRequiredMixin, generic.CreateView):

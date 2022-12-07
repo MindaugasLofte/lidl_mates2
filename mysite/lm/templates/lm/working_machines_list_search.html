@@ -11,7 +11,11 @@
 {% endblock %}
 
 {% block content %}
-
+  <h2> Norite pakartoti paiešką pagal krautuvo numerį (ID)?</h2>
+ <form class="d-flex" role="search" action="{% url 'search' %}" method="get">
+    <input class="form-control me-2" name="query" type="search" placeholder=" Įveskite krautuvo triženklį numerį ar dalį jo, neįvedus skaičiaus: bus grąžintas visų krautuvų naudojimosi sąrašas." aria-label="Search">
+    <button class="btn btn-outline-secondary" type="submit">{% trans "Search" %}</button>
+</form>
 <h1>{% trans "Search results: " %} </h1>
 
 {% if object_list %}
@@ -34,16 +38,32 @@
       <td>{{krautuvas.darbuotojas}}</td>
       <td>{{krautuvas.data_taken}}</td>
   </tbody>
+  <div class="container">
+  <nav aria-label="...">
+    {% if working_machines_list.has_other_pages %}
+    <ul class="pagination pagination-sm justify-content-end">
+      {% for i in working_machines_list.paginator.page_range %}
+        {% if working_machines_list.number == i %}
+      <li class="page-item active">
+        <a class="page-link">{{i}}</a>
+      </li>
+      {% else %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{i}}">{{ i }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </nav>
+</div>
    {% endfor %}
      {% else %}
   <p> Nieko neradome ;( ar tikrai įvedėte ne daugiau kaip 3 skaitmenis?</p>
    {% endif %}
 </table>
-  <h2> Norite pakartoti paiešką pagal krautuvo numerį (ID)?</h2>
- <form class="d-flex" role="search" action="{% url 'search' %}" method="get">
-    <input class="form-control me-2" name="query" type="search" placeholder=" Įveskite krautuvo triženklį numerį ar dalį jo, neįvedus skaičiaus: bus grąžintas visų krautuvų naudojimosi sąrašas." aria-label="Search">
-    <button class="btn btn-outline-secondary" type="submit">{% trans "Search" %}</button>
-</form>
+
+
 
 
 {% endblock %}

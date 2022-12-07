@@ -23,8 +23,8 @@
       <th scope="col">last_name</th>
       <th scope="col">working_department</th>
       <th scope="col">working_zone</th>
-          <th scope="col">position</th>
-          <th scope="col">working_since</th>
+      <th scope="col">position</th>
+      <th scope="col">working_since</th>
 
 
     </tr>
@@ -38,10 +38,10 @@
       <td>{{worker.picker_code}}</td>
       <td>{{worker.first_name}}</td>
       <td>{{worker.last_name}}</td>
-            <td>{{worker.working_department}}</td>
-            <td>{{worker.working_zone}}</td>
-            <td>{{worker.position}}</td>
-            <td>{{worker.working_since}}</td>
+      <td>{{worker.working_department}}</td>
+      <td>{{worker.working_zone}}</td>
+      <td>{{worker.position}}</td>
+      <td>{{worker.working_since}}</td>
     </tr>
   </tbody>
    {% endfor %}
@@ -49,12 +49,10 @@
 
 <div class="container">
   <nav aria-label="...">
-<!--    jeigu bus daugiau nei 2 puslpaiai bus, mes puslapiavima-->
     {% if workers.has_other_pages %}
     <ul class="pagination pagination-sm justify-content-end">
       {% for i in workers.paginator.page_range %}
         {% if workers.number == i %}
-<!--      bus patemsintas skaiciuukas-->
       <li class="page-item active">
         <a class="page-link">{{i}}</a>
       </li>

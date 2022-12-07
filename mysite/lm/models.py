@@ -120,18 +120,18 @@ class MyUser(AbstractBaseUser):
         return self.email
 
     def has_perm(self, perm, obj=None):
-        "Does the user have a specific permission?"
+        """Does the user have a specific permission?"""
         # Simplest possible answer: Yes, always
         return True
 
     def has_module_perms(self, app_label):
-        "Does the user have permissions to view the app `app_label`?"
+        """Does the user have permissions to view the app `app_label`?"""
         # Simplest possible answer: Yes, always
         return True
 
     @property
     def is_staff(self):
-        "Is the user a member of staff?"
+        """Is the user a member of staff?"""
         # Simplest possible answer: All admins are staff
         return self.is_admin
 
@@ -178,6 +178,9 @@ class Darbo_laiko_irasai(models.Model):
     def get_absolute_url(self):
         """Nurodo  darbo iraso galutinį adresą"""
         return reverse('Darbo_laiko_irasai', args=[str(self.id)])
+    # def return_picked_boxes(self):
+    #     """grazina picked boxes"""
+    #     return self.picked_boxes
 
     # def __str__(self):
     #     return f'{self.data} diena darbuotojas, kurio rinkejo kodas{self.darbuotojas.picker_code} surinko {self.picked_boxes} dezes'

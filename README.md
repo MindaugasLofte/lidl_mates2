@@ -43,10 +43,10 @@ galėsite ne tik naršyti, filtruoti, bet ir įvesti duomenis.
 # EXTRA
 
   <h4> Darbą atliko: CodeAcademy kursų  VIGI_25 grupės studentas **Mindaugas Grikšelis**.
-    <br> Esu dar labai pradedantysis programuotojas, mielai priimčiau visas pastabas <a href="mailto:mindaugas.grikselis@gmail.com? subject=LIDL mates">e-mail</a> ir/arba <a href="https://www.facebook.com/mindaugas.grikselis/?viewas=100000686899395&show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_transition=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0">FB</a>.
+    <br> Esu dar labai pradedantysis programuotojas, mielai priimčiau visas pastabas <a href="mailto:mindaugas.grikselis@gmail.com? subject=LIDL mates">e-mail</a> ir/arba <a href="https://www.facebook.com/mindaugas.grikselis/?viewas=100000686899395&show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_transition=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0" target="_new">FB</a>.
     <br> 2022-11-27 Kaunas</h4>
  
-<ul> Programos versija 0.17</ul>
+<ul> Programos versija 0.41</ul>
 <small> p.s. ir žinoma didelis dėkui Žmonai Gabrielei, ką tik gimusiai pirmagymei Mortai ir dėstytojai Džordanai</small>
 
 

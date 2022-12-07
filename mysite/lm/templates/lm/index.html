@@ -6,15 +6,53 @@
 {% trans "Index" %}
 {% endblock %}
 
-{% block css_files %}
-<link rel="stylesheet" href="">
-{% endblock %}
-
 {% block content %}
+
+<style>
+  section {
+  box-sizing: border-box;
+  border: 2px solid blue;
+  width: 100%;
+  float: left;
+  border-radius: 25px;
+}
+.left {
+  float: left;
+  background: pink;
+  margin: 5px;
+  width: 30vw;
+  height: 50vh;
+  border-radius: 25px;
+}
+
+.right {
+  float: right;
+  background: cyan;
+  margin: 5px;
+  width: 30vw;
+  height: 50vh;
+  border-radius: 25px;
+}
+  h4  {
+  background: grey;
+  text-align: center;
+  border-radius: 25px;
+  color: white
+}
+
+img{
+width:15vh;
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: right
+}
+</style>
+
 <h1 class="p-4 text-primary d-flex justify-content-center"> {% trans "Index - main page" %}</h1>
- <h4>Šiuo metu programoje yra:</h4>
-
-
+<section>
+  <div class="left">
+      <h4>Šiuo metu programoje yra:</h4>
   <table class="indexTable" >
   <tbody>
     <tr>
@@ -37,9 +75,46 @@
       <th class="col-6 col-sm-4" scope="row">Užregistruotų pastabų:</th>
       <td class="col-6 col-sm-4">{{ num_notes }}</td>
     </tr>
+
+  </tbody>
+</table>
+  </div>
+
+
+  <div class="right">
+ <h4 style="background color:none">Some other statistics:</h4>
+  <table class="indexTable" >
+  <tbody>
+
+      <tr>
+      <th class="col-6 col-sm-4" scope="row">Total picked boxes:</th>
+      <td class="col-6 col-sm-4">{{ total_picked_boxes }}</td>
+    </tr>
+        <tr>
+      <th class="col-6 col-sm-4" scope="row">Average boxes picked per day:</th>
+      <td class="col-6 col-sm-4">{{ average_boxes_picked_per_day }}</td>
+    </tr>
+         <tr>
+      <th class="col-6 col-sm-4" scope="row">Most boxes picked per day so far:</th>
+      <td class="col-6 col-sm-4">{{ most_picked_so_far }}</td>
+    </tr>
   </tbody>
 </table>
 
+
+
+  </div>
+  <p> <img src="https://m.media-amazon.com/images/I/61C3vVhcbQL._AC_SY780_.jpg">
+ <a href="https://www.amazon.co.uk/dp/0823405648?linkCode=gs2&tag=flu085-21" target="_new">“The Tortoise and the Hare” by Aesop</a>
+The Tortoise and the Hare: An Aesop Fable (Reading Rainbow Books)This classic fable (story) tells the story of a very slow tortoise (turtle) and a speedy hare (rabbit).
+
+The tortoise challenges the hare to a race. The hare laughs at the idea that a tortoise could run faster than he, but the race leads to surprising results.
+
+What Is Great About It: Have you ever heard the English expression, “Slow and steady wins the race”? This story is the basis for that common phrase.
+
+This timeless (classic) short story teaches a lesson that we all know but can sometimes forget: Natural talent is no substitute for hard work, and overconfidence often leads to failure.
+  </p>
+</section>
 
 <div class="collapse" id="navbarToggleExternalContent">
   <div class="bg-dark p-4">
@@ -52,16 +127,4 @@
     <li>Ketvirtadieniais 20 val. Jūsų laukia Girstučio vandens sporto kompleksas. Trukmė 1 val.</li>
         </span>
   </div>
-</div>
-<nav class="navbar navbar-dark bg-dark">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span> Lidl primena
-    </button>
-  </div>
-</nav>
-
-
-
-
 {% endblock %}
