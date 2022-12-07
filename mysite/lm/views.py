@@ -7,9 +7,12 @@ from django.db.models import Q
 from django.views.generic import ListView
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
-from .forms import UserUpdateForm, ProfilisUpdateForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import UserUpdateForm, ProfilisUpdateForm, UserKrautuvasCreateForm
+# from .forms import  UserNotesCreateForm, UserWorkingRecordCreateForm
+
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import generic
+
 
 # Create your views here.
 
@@ -179,3 +182,73 @@ class WorkersUsedMachinesListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 2
     def get_queryset(self):
         return Krautuvas.objects.filter(darbuotojas=self.request.user).order_by('data_taken')
+
+# class KrautuvasByUserDetailView(LoginRequiredMixin, generic.DetailView):
+#     model = Krautuvas
+#     template_name = 'lm/worker_used_machine.html'
+class KrautuvasByUserCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Krautuvas
+    success_url = '/lm/my_used_machines/'
+    template_name = 'lm/user_krautuvas_form.html'
+    form_class = UserKrautuvasCreateForm
+
+    def form_valid(self, form):
+        form.instance.darbuotojas = self.request.user
+        # form.instance.status = 'taken'
+        form.save()
+        return super().form_valid(form)
+
+# neveikia reikia sukurti modeli motina krautuvui
+# class KrautuvasByUserUpdateView(LoginRequiredMixin, generic.UpdateView, UserPassesTestMixin):
+#     model = Krautuvas
+#     fields = ["data_taken", "krautuvo_id", "note_type", "status", 'notes']
+#     success_url = '/lm/my_used_machines/'
+#     template_name = 'lm/user_krautuvas_form.html'
+#
+#     def form_valid(self, form):
+#         form.instance.darbuotojas = self.request.user
+#         form.save()
+#         return super().form_valid(form)
+#
+#     def test_func(self):
+        # motherModelOfKrautuvasLower = self.get_object()
+        # return self.request.user == motherModelOfKrautuvasLower.darbuotojas
+#
+#     # 1121paskaita delete pasiimta booksinstanse 1v
+# class KrautuvasByUserDeleteView(generic.DeleteView, LoginRequiredMixin, UserPassesTestMixin):
+#     model = Krautuvas
+#     success_url = '/lm/my_used_machines/'
+#     template_name = 'lm/worker_machine_delete.html'
+#     context_object_name = 'instance'
+#
+#      def test_func(self):
+#          motherModelOfKrautuvasLower_instance = self.get_object()
+#          return motherModelOfKrautuvasLower_instance.darbuotojas == self.request.user
+## neveikia reikia sukurti modeli motina krautuvui# neveikia reikia sukurti modeli motina krautuvui
+
+
+# class NotesByUserCreateView(LoginRequiredMixin, generic.CreateView):
+#     model = Notes
+#     success_url = '/my_notes/'
+#     template_name = 'lm/user_notes_form.html'
+#     form_class = UserNotesCreateForm
+#
+#     def form_valid(self, form):
+#         form.instance.darbuotojas = self.request.user
+#         form.save()
+#         return super().form_valid(form)
+
+
+
+# class WorkingRecordByUserCreateView(LoginRequiredMixin, generic.CreateView):
+#     model = Darbo_laiko_irasai
+#     success_url = '/lm/worker_working_records/'
+#     template_name = 'lm/user_worker_record_form.html'
+#     form_class = UserWorkingRecordCreateForm
+#
+#     def form_valid(self, form):
+#         form.instance.darbuotojas = self.request.user
+#         form.save()
+#         return super().form_valid(form)
+
+

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1b7f21cd-f611-4ff9-89bb-8c733e97d2f1" name="Changes" comment="1. Krautuvas atributas notes ir Notes atributas summary tures wordpreso galimybiu su tinymce">
+      <change afterPath="$PROJECT_DIR$/mysite/lm/migrations/0008_delete_takemachine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/user_krautuvas_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/user_notes_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/user_worker_record_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/worker_machine_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/worker_used_machine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/profilis.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/profilis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/lm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/base.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HzSv1MQS5qTfzqdOH6mFR3ss0X" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/brask/Desktop/IT/test/vigi25-projects/mysite/lm/templates/lm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\lm\templates\lm" />
+      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\static" />
+      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\lm\static\lm" />
+      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\lm\static\css" />
+      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\lm\base\icons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\static" />
+      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\static\images" />
+      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\lm\templates\lm\dashboard" />
+      <recent name="C:\Users\brask\Desktop\IT\test\vigi25-projects\mysite\lm" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b7f21cd-f611-4ff9-89bb-8c733e97d2f1" name="Changes" comment="" />
+      <created>1669286647668</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669286647668</updated>
+    </task>
+    <task id="LOCAL-00001" summary="1)Padaryta didžioji dalis vertimų, iskaitant admin tinklapyje. reikia sutvarkyti registracija ir busimus.&#10;2)ištrintas modelis Darbo_laiko_irasai_planas. planuojama tik darbo grafiko foto ikelti&#10;3)papildytas Darbuotojo modelis atributu working_department">
+      <created>1669427643105</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669427643105</updated>
+    </task>
+    <task id="LOCAL-00002" summary="kol kas i daschboard.html ikelta pavyzdine norimas sukurti grafiko pirmine vizualizacija">
+      <created>1669428261235</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669428261235</updated>
+    </task>
+    <task id="LOCAL-00003" summary="kol kas i daschboard.html ikelta pavyzdine norimas sukurti grafiko pirmine vizualizacija">
+      <created>1669428288560</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669428288560</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Registrasijos šablonai taip pat jau bus galima matyti pasirinktom 2 kalbom">
+      <created>1669460257083</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669460257083</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1) base.html per klaida buvo istrinta 83 eil reiksme &lt;form action=&quot;{% url 'set_language' %}&#10;2) pataisyti keli vertimai i LT kalba&#10;3) i url pridetas papildomas path, kad nemestu klaidos del favicon.ico">
+      <created>1669503676637</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669503676637</updated>
+    </task>
+    <task id="LOCAL-00006" summary="&#10;neveikia  url.py faile pridetas papildomas path, kad nemestu klaidos del favicon.ico. uzkomentavau, prie progos grisiu">
+      <created>1669505624599</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669505624599</updated>
+    </task>
+    <task id="LOCAL-00007" summary="pridetas Krautuvas klasei papildomas atributas statusas. Pirminis tikslas atvaizduoti vartotojui jo naudotu krautuvu sarasa">
+      <created>1669508363593</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669508363593</updated>
+    </task>
+    <task id="LOCAL-00008" summary="1) Base.html sulygiuotas logo su navbar&#10;2) krautuvai bus išrikiuoti pagal ID&#10;3) visi krautuvai bus atvaizduoti working_machine_list.html, lenteleje.">
+      <created>1669548689822</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669548689822</updated>
+    </task>
+    <task id="LOCAL-00009" summary="visos darbo zonos atvaizduojamos working_zones.html, lenteleje.">
+      <created>1669549259376</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669549259376</updated>
+    </task>
+    <task id="LOCAL-00010" summary="visi admin pagalba suregistruoti darbuotojai  atvaizduojami workers, lenteleje.">
+      <created>1669550465610</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669550465610</updated>
+    </task>
+    <task id="LOCAL-00011" summary="1) index.html parodome administratoriaus suvestus duomenis. ju kiekius&#10;2) Darbo_laiko_irasai modelyje daugiau duomenu atvaizduosime ji iskvietus&#10;3) puslapiu lenteles pakeiciaus, kad nebutu juodos spalvos&#10;4) su Admin ivedziau keleta papildomo irasu, kuriu nebuvo">
+      <created>1669555254518</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669555254518</updated>
+    </task>
+    <task id="LOCAL-00012" summary="1) picker_code, krautuvo_id, zone_code nuo siol bus tik unikalus&#10;2) models.py dalis lauku bus neprivalomi&#10;3) jeigu darbuotojas netures foto, jos ir neatvaizduos, if loop pagalba ignoruos jei nebus foto">
+      <created>1669557995224</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669557995224</updated>
+    </task>
+    <task id="LOCAL-00013" summary="1) admin matys patogesni vaizda, bus galima filtruoti ir/arba pasinaudoti paieska">
+      <created>1669560900488</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669560900488</updated>
+    </task>
+    <task id="LOCAL-00014" summary="1) papildytas about.html puslapis&#10;2) papildytas Dashboard.html puslapis&#10;3) aprašytas README.md failas&#10;4) sukurtas requirements.txt&#10;5) kiti smulkūs pataisymai">
+      <created>1669585569754</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669585569755</updated>
+    </task>
+    <task id="LOCAL-00015" summary="5)  smulkūs README.md pataisymai">
+      <created>1669586195242</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1669586195242</updated>
+    </task>
+    <task id="LOCAL-00016" summary="1. about.html: fb nuoroda atsidarys naujame TAB. Lenteles stilius pagrazintas&#10;2. base.html: Veikia DROPDOWN &quot;user actions&quot; , reikia sudeti linkus!. Home nusokes mygtukas sutvarkytas">
+      <created>1669842209959</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1669842209959</updated>
+    </task>
+    <task id="LOCAL-00017" summary="1. about.html: fb nuoroda atsidarys naujame TAB. Lenteles stilius pagrazintas&#10;2. base.html: Veikia DROPDOWN &quot;user actions&quot; , reikia sudeti linkus!. Home nusokes mygtukas sutvarkytas&#10;3. admin.py kazkas nusoko su paieska - reiks sutvarkyti, uzkomentavau&#10;4. kiti smulkus pataisymai, nebuvo pilnai uzdaryti ul, div ir panasiai, tarpai rekomenduotini">
+      <created>1669847569010</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1669847569010</updated>
+    </task>
+    <task id="LOCAL-00018" summary="1. admin site - bus galima daryti search&#10;2. Darbo_laiko_irasai - bus galima patogiau ivesti duration&#10;3. Krautuvas model is user atkeista i darbuotojas">
+      <created>1670022851341</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1670022851341</updated>
+    </task>
+    <task id="LOCAL-00019" summary="1. sukurta working records puslapis, kuris atviazduoja duomenis lenteleje">
+      <created>1670031932686</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1670031932686</updated>
+    </task>
+    <task id="LOCAL-00020" summary="1. krautuvo paieska bus patogiau atviazduota working_machines_list_search.html&#10;2. search.html nenaudojamas">
+      <created>1670077015880</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1670077015880</updated>
+    </task>
+    <task id="LOCAL-00021" summary="1. krautuvo paieska bus galima patogiau is naujo paleisti&#10;2. pusplapiavimas padarytas masinoms, darbuiotojams ir darbo irasams">
+      <created>1670092473831</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1670092473831</updated>
+    </task>
+    <task id="LOCAL-00022" summary="1. pakeista is django standar user to  custom user,&#10;2. pries tai istrintos visos migracijos ir db">
+      <created>1670198181538</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1670198181538</updated>
+    </task>
+    <task id="LOCAL-00023" summary="1. prideti papildomi prisiregistravimo laukai jungiantis per register.html, o superuseriui pasalinti">
+      <created>1670247825133</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1670247825133</updated>
+    </task>
+    <task id="LOCAL-00024" summary="1. sukurta vartotojo autentifikacija per dashboard, profiliai sukurti del foto&#10;2. sukurtas forms.py ir profilis.html, jo pagalba vartotojas gales keisti savo duomenis&#10;3. dalis autentifikuoto vartotojo informacijos jau matosi">
+      <created>1670266202560</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1670266202560</updated>
+    </task>
+    <task id="LOCAL-00025" summary="1. uzregistravus naujam darbuotojui, jo profilis atsinaujina signals.py pagalba">
+      <created>1670269664237</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1670269664237</updated>
+    </task>
+    <task id="LOCAL-00026" summary="1. uzregistravus naujam darbuotojui, jo profilis atsinaujina signals.py pagalba">
+      <created>1670271100769</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1670271100769</updated>
+    </task>
+    <task id="LOCAL-00027" summary="1. &quot;lidl primena&quot; perkelta is dashboard i index&#10;2. patobulintas visu tempalates pavadinimu dizainas ir pridetas justify">
+      <created>1670274830610</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1670274830610</updated>
+    </task>
+    <task id="LOCAL-00028" summary="1. sukurtas when_salary_increase poperty, bus atvaizduojams dashboard.html">
+      <created>1670281454697</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1670281454697</updated>
+    </task>
+    <task id="LOCAL-00029" summary="1. sukurtas prisijungusio vartotojo sukurtu zinuciu sarasas&#10;2. duomenys pateikti lenteleje ir su kitokiu paginatoriumi">
+      <created>1670285920236</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1670285920236</updated>
+    </task>
+    <task id="LOCAL-00030" summary="1. sukurtas prisijungusio vartotojo sukurtu darbo irasu sarasas&#10;2. duomenys pateikti lenteleje su kitokiu paginatoriumi&#10;3. nepavyko pick rate paskaiciuoti">
+      <created>1670289345986</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1670289345986</updated>
+    </task>
+    <task id="LOCAL-00031" summary="1. sukurtas prisijungusio vartotojo naudotu masinu saraso views&#10;2. duomenys pateikti naujame worker_used_machines.html lenteleje su  paginatoriumi">
+      <created>1670322085888</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1670322085888</updated>
+    </task>
+    <task id="LOCAL-00032" summary="1. Krautuvas atributas notes ir Notes atributas summary tures wordpreso galimybiu su tinymce">
+      <created>1670324769711</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1670324769711</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="pridetas Krautuvas klasei papildomas atributas statusas. Pirminis tikslas atvaizduoti vartotojui jo naudotu krautuvu sarasa" />
+    <MESSAGE value="1) Base.html sulygiuotas logo su navbar&#10;2) krautuvai bus išrikiuoti pagal ID&#10;3) visi krautuvai bus atvaizduoti working_machine_list.html, lenteleje." />
+    <MESSAGE value="visos darbo zonos atvaizduojamos working_zones.html, lenteleje." />
+    <MESSAGE value="visi admin pagalba suregistruoti darbuotojai  atvaizduojami workers, lenteleje." />
+    <MESSAGE value="1) index.html parodome administratoriaus suvestus duomenis. ju kiekius&#10;2) Darbo_laiko_irasai modelyje daugiau duomenu atvaizduosime ji iskvietus&#10;3) puslapiu lenteles pakeiciaus, kad nebutu juodos spalvos&#10;4) su Admin ivedziau keleta papildomo irasu, kuriu nebuvo" />
+    <MESSAGE value="1) picker_code, krautuvo_id, zone_code nuo siol bus tik unikalus&#10;2) models.py dalis lauku bus neprivalomi&#10;3) jeigu darbuotojas netures foto, jos ir neatvaizduos, if loop pagalba ignoruos jei nebus foto" />
+    <MESSAGE value="1) admin matys patogesni vaizda, bus galima filtruoti ir/arba pasinaudoti paieska" />
+    <MESSAGE value="1) papildytas about.html puslapis&#10;2) papildytas Dashboard.html puslapis&#10;3) aprašytas README.md failas&#10;4) sukurtas requirements.txt&#10;5) kiti smulkūs pataisymai" />
+    <MESSAGE value="5)  smulkūs README.md pataisymai" />
+    <MESSAGE value="1. about.html: fb nuoroda atsidarys naujame TAB. Lenteles stilius pagrazintas&#10;2. base.html: Veikia DROPDOWN &quot;user actions&quot; , reikia sudeti linkus!. Home nusokes mygtukas sutvarkytas" />
+    <MESSAGE value="1. about.html: fb nuoroda atsidarys naujame TAB. Lenteles stilius pagrazintas&#10;2. base.html: Veikia DROPDOWN &quot;user actions&quot; , reikia sudeti linkus!. Home nusokes mygtukas sutvarkytas&#10;3. admin.py kazkas nusoko su paieska - reiks sutvarkyti, uzkomentavau&#10;4. kiti smulkus pataisymai, nebuvo pilnai uzdaryti ul, div ir panasiai, tarpai rekomenduotini" />
+    <MESSAGE value="1. admin site - bus galima daryti search&#10;2. Darbo_laiko_irasai - bus galima patogiau ivesti duration&#10;3. Krautuvas model is user atkeista i darbuotojas" />
+    <MESSAGE value="1. sukurta working records puslapis, kuris atviazduoja duomenis lenteleje" />
+    <MESSAGE value="1. krautuvo paieska bus patogiau atviazduota working_machines_list_search.html&#10;2. search.html nenaudojamas" />
+    <MESSAGE value="1. krautuvo paieska bus galima patogiau is naujo paleisti&#10;2. pusplapiavimas padarytas masinoms, darbuiotojams ir darbo irasams" />
+    <MESSAGE value="1. pakeista is django standar user to  custom user,&#10;2. pries tai istrintos visos migracijos ir db" />
+    <MESSAGE value="1. prideti papildomi prisiregistravimo laukai jungiantis per register.html, o superuseriui pasalinti" />
+    <MESSAGE value="1. sukurta vartotojo autentifikacija per dashboard, profiliai sukurti del foto&#10;2. sukurtas forms.py ir profilis.html, jo pagalba vartotojas gales keisti savo duomenis&#10;3. dalis autentifikuoto vartotojo informacijos jau matosi" />
+    <MESSAGE value="1. uzregistravus naujam darbuotojui, jo profilis atsinaujina signals.py pagalba" />
+    <MESSAGE value="1. &quot;lidl primena&quot; perkelta is dashboard i index&#10;2. patobulintas visu tempalates pavadinimu dizainas ir pridetas justify" />
+    <MESSAGE value="1. sukurtas when_salary_increase poperty, bus atvaizduojams dashboard.html" />
+    <MESSAGE value="1. sukurtas prisijungusio vartotojo sukurtu zinuciu sarasas&#10;2. duomenys pateikti lenteleje ir su kitokiu paginatoriumi" />
+    <MESSAGE value="1. sukurtas prisijungusio vartotojo sukurtu darbo irasu sarasas&#10;2. duomenys pateikti lenteleje su kitokiu paginatoriumi&#10;3. nepavyko pick rate paskaiciuoti" />
+    <MESSAGE value="1. sukurtas prisijungusio vartotojo naudotu masinu saraso views&#10;2. duomenys pateikti naujame worker_used_machines.html lenteleje su  paginatoriumi" />
+    <MESSAGE value="1. Krautuvas atributas notes ir Notes atributas summary tures wordpreso galimybiu su tinymce" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Krautuvas atributas notes ir Notes atributas summary tures wordpreso galimybiu su tinymce" />
+  </component>
+</project>

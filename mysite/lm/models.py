@@ -138,9 +138,9 @@ class MyUser(AbstractBaseUser):
     @property
     def when_salary_increase(self):
         if self.working_since:
-            dirbo_dienu=(dt.date.today() -self.working_since).days
+            dirbo_dienu = (dt.date.today() - self.working_since).days
             # max_riba_algu_kelimui 3metai arba 1095d
-            if dirbo_dienu>=1095:
+            if dirbo_dienu >=1095:
                 return f"Pasiekėte maksimalią III pakopą savo darbo pozicijoje. Norint gauti didesnę algą, turite prisiimti naujų iššūkių ir kilti karjeros laiptais!"
             elif dirbo_dienu < 1095 and dirbo_dienu >= 730:
                 atimame_2metus=dirbo_dienu-730
@@ -204,7 +204,7 @@ class Notes(models.Model):
 
 
 class Krautuvas(models.Model):
-    krautuvo_id = models.IntegerField(_('Vechiles ID "3 digits"'), help_text='krautuvo numeris', unique=True)
+    krautuvo_id = models.IntegerField(_('Vechiles ID "3 digits"'), help_text='krautuvo numeris', unique=False)
     data_taken = models.DateField(_('Date when vechiles was taken'), help_text='kada krautuvas paiimtas', null=True, blank=True)
     darbuotojas = models.ForeignKey('MyUser',null=True, on_delete=models.SET_NULL,blank=True)
     LOAN_STATUS = (

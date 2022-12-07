@@ -65,9 +65,9 @@
           {% trans "User actions" %}
          </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">{% trans "Add working day" %}</a>
-          <a class="dropdown-item" href="#">{% trans "Add note" %}</a>
-          <a class="dropdown-item" href="#">{% trans "Book working machine" %}</a>
+<!--          <a class="dropdown-item" href="  url 'add_my_working_records' ?next=/lm">{% trans "Add working day" %}</a>-->
+<!--          <a class="dropdown-item" href=" url 'my_new_note' ?next=/lm">{% trans "Add note" %}</a>-->
+          <a class="dropdown-item" href="{% url 'my_new_machine' %}?next=/lm">{% trans "Add working machine" %}</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{% url 'my_working_records' %}">{% trans "Your working records" %}</a>
           <a class="dropdown-item" href="{% url 'my_notes' %}">{% trans "Your notes" %}</a>

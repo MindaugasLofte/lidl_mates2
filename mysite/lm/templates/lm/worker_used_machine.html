@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+{% trans "Worker Working records" %}
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="">
+{% endblock %}
+
+{% block content %}
+<h1 class="p-4 text-primary d-flex justify-content-center">{{user.first_name.upper }} {{user.last_name.upper }} {% trans "used machines" %} </h1>
+
+{% if object.darbuotojas == user %}
+
+  <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'my_machine_update' object.id %}">Redaguoti</a>
+  <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'my-book-delete' object.id %}">Ištrinti</a>
+  {% endif %}
+
+
+
+{% endblock %}
