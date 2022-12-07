@@ -172,7 +172,7 @@ class Darbo_laiko_irasai(models.Model):
         verbose_name_plural = _("Working records")
     def get_absolute_url(self):
         """Nurodo  darbo iraso galutinį adresą"""
-        return reverse('Darbo_laiko_irasai', args=[str(self.data)])
+        return reverse('Darbo_laiko_irasai', args=[str(self.id)])
 
     # def __str__(self):
     #     return f'{self.data} diena darbuotojas, kurio rinkejo kodas{self.darbuotojas.picker_code} surinko {self.picked_boxes} dezes'
@@ -228,6 +228,10 @@ class Krautuvas(models.Model):
         ordering = ['krautuvo_id']
         verbose_name = _("Vehicle")
         verbose_name_plural = _("Vehicles")
+
+    def get_absolute_url(self):
+        """Nurodo  krautuvo galutinį adresą"""
+        return reverse('Darbo_laiko_irasai', args=[str(self.id)])
 
     def __str__(self):
         return f'{self.krautuvo_id} krautuvą {self.data_taken} dieną  naudojosi {self.darbuotojas} '

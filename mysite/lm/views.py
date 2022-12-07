@@ -97,7 +97,7 @@ def register(request):
     if request.method == 'POST':
         #pasiimti duomenis iš formos
         picker_code = request.POST['picker_code']
-        date_of_birth = request.POST['date_of_birth']
+        # date_of_birth = request.POST['date_of_birth']
         email = request.POST ['email']
         password = request.POST['password']
         password2 = request.POST['password2']
@@ -110,7 +110,7 @@ def register(request):
                     messages.error(request, _('Username with %s already exists!') % email)
                     return redirect('register')
                 else:
-                    MyUser.objects.create_user(picker_code=picker_code, email=email, password=password, date_of_birth=date_of_birth)
+                    MyUser.objects.create_user(picker_code=picker_code, email=email, password=password)
                     return render(request, 'lm/welcome.html')
         else:
             messages.error(request, _('Passwords do no match!'))

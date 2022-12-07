@@ -1,11 +1,15 @@
 from .models import MyUser, Profilis, Krautuvas, Notes,Darbo_laiko_irasai
 from django import forms
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
     class Meta:
         model = MyUser
-        fields = [ "first_name", "last_name", 'email', 'picker_code', "working_department", "working_zone", "position", "working_since",'date_of_birth']
+        fields = ["first_name", "last_name", 'email', 'picker_code', "working_department", "working_zone", "position", "working_since",'date_of_birth']
+        widgets = {'working_since': DateInput(), 'date_of_birth': DateInput()}
 
 class ProfilisUpdateForm(forms.ModelForm):
     class Meta:
@@ -13,8 +17,7 @@ class ProfilisUpdateForm(forms.ModelForm):
         fields = ['photo']
 
 
-class DateInput(forms.DateInput):
-    input_type = 'date'
+
 
 
 class UserKrautuvasCreateForm(forms.ModelForm):

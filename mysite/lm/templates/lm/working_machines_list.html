@@ -19,7 +19,7 @@
 <table class="table ">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">ID_record</th>
       <th scope="col">Work machine id</th>
       <th scope="col">Status</th>
       <th scope="col">Worker</th>
@@ -29,7 +29,7 @@
   {% for krautuvas in working_machines_list %}
   <tbody>
     <tr>
-      <th scope="row">-</th>
+      <th scope="row">{{krautuvas.id}}</th>
       <td>{{krautuvas.krautuvo_id}}</td>
       <td>{{krautuvas.status}}</td>
       <td>{{krautuvas.darbuotojas}}</td>

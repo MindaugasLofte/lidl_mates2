@@ -18,7 +18,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">record_ID</th>
       <th scope="col">data_taken</th>
       <th scope="col">krautuvo_id</th>
       <th scope="col">note_type</th>
@@ -32,7 +32,7 @@
    {% for record in my_used_machines %}
   <tbody>
     <tr>
-      <th scope="row">-</th>
+      <th scope="row">{{record.id}}</th>
       <td>{{record.data_taken}}</td>
       <td>{{record.krautuvo_id}}</td>
       <td>{{record.note_type}}</td>
