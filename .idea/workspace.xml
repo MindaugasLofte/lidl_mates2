@@ -5,30 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b7f21cd-f611-4ff9-89bb-8c733e97d2f1" name="Changes" comment="1. pataisyta, dabar gerai skaiciuoja dashboarde, kiek iki kito algos kelimo yra dienu">
-      <change afterPath="$PROJECT_DIR$/mysite/lm/media/profile_pics/favicon_2.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/lm/media/profile_pics/lt_icon_128084.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/lm/media/profile_pics/no_photo_CmbbrHO.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/lm/media/profile_pics/no_photo_Y71MyT7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/lm/media/profile_pics/no_photo_qMEOz6J.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/lm/media/profile_pics/sveikinimas.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/darbo_grafikas.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/darbo_grafikas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/user_notes_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/user_notes_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/user_worker_record_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/user_worker_record_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/work_records.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/work_records.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/worker.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/worker.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/worker_machine_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/worker_machine_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/workers.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/workers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/templates/lm/working_machines_list_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/templates/lm/working_machines_list_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/lm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/lm/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
